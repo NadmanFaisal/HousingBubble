@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://obxun5to0osn"]
+
+[ext_resource type="FontFile" uid="uid://3xakgfsiuvig" path="res://assets/GameFont.otf" id="1_2e56d"]
+[ext_resource type="Script" path="res://scripts/menu/menu.gd" id="1_g4omf"]
+[ext_resource type="Script" path="res://scripts/menu/background.gd" id="2_m5od0"]
+[ext_resource type="Texture2D" uid="uid://dcn0ejdsxewgl" path="res://assets/backgorund2.png" id="3_kpqs4"]
+[ext_resource type="PackedScene" uid="uid://cb3mtk3k3flh" path="res://scenes/menu/menu_bubble.tscn" id="3_um6h8"]
+
+[sub_resource type="Curve2D" id="Curve2D_x1chs"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -895, 707, 0, 0, 0, 0, 984, 706)
+}
+point_count = 2
+
+[node name="Menu" type="Node"]
+script = ExtResource("1_g4omf")
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.17
+anchor_right = 0.5
+anchor_bottom = 0.17
+offset_left = -570.0
+offset_top = 5.0
+offset_right = 570.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_2e56d")
+theme_override_font_sizes/font_size = 128
+text = "Housing Bubble"
+
+[node name="Start" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -15.5
+offset_right = 23.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_2e56d")
+theme_override_font_sizes/font_size = 128
+text = "Start"
+
+[node name="Background" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0.854902)
+z_index = -10
+position = Vector2(951, 370)
+script = ExtResource("2_m5od0")
+bubbleScene = ExtResource("3_um6h8")
+metadata/_edit_group_ = true
+
+[node name="BackgroundImage" type="Sprite2D" parent="Background"]
+texture = ExtResource("3_kpqs4")
+
+[node name="BubblePath" type="Path2D" parent="Background"]
+curve = SubResource("Curve2D_x1chs")
+
+[node name="BubbleSpawner" type="PathFollow2D" parent="Background/BubblePath"]
+position = Vector2(-895, 707)
+rotation = -0.000532198
+
+[node name="BubbleTimer" type="Timer" parent="Background"]
+wait_time = 0.3
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="timeout" from="Background/BubbleTimer" to="Background" method="_on_bubble_timer_timeout"]

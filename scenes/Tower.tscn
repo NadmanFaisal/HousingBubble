@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwimw45kgn57k"]
+
+[ext_resource type="Script" path="res://scripts/Tower.gd" id="1_1sc3o"]
+[ext_resource type="Texture2D" uid="uid://d2qgo5paku8sc" path="res://assets/tower.png" id="2_36bb5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_howfc"]
+size = Vector2(129, 129)
+
+[node name="Tower" type="CharacterBody2D"]
+script = ExtResource("1_1sc3o")
+
+[node name="Position2D" type="Marker2D" parent="."]
+position = Vector2(0, -74)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -0.5)
+shape = SubResource("RectangleShape2D_howfc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("2_36bb5")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

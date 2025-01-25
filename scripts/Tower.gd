@@ -16,15 +16,14 @@ func _process(delta):
 	
 
 func shoot():
-	var bullet = bulletPath.instantiate()
-	get_parent().add_child(bullet)
-	bullet.position = $Position2D.global_position
-	
 	var mob = get_tree().get_nodes_in_group("mobs")
 	if mob.size() > 0:
+		var bullet = bulletPath.instantiate()
+		get_parent().add_child(bullet)
+		bullet.position = $Position2D.global_position
 		bullet.fire(mob[0].global_position)
 	else:
-		print("No mob found")
+		print("All mobs killed")
 
 
 

@@ -16,6 +16,9 @@ func _physics_process(delta):
 		if collision_info:
 			var collided_object = collision_info.get_collider()
 			if collided_object.is_in_group("mobs"):
-				collided_object.take_damage(25)
+				collided_object.take_damage(damage)
 				print("I collided with a mob")
 				queue_free()
+				
+		if position.distance_to(target_position) > 2000:
+			queue_free()

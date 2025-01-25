@@ -2,7 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://bgj8lwuchbeha" path="res://scenes/theBubble.tscn" id="1_r4mg2"]
 [ext_resource type="PackedScene" uid="uid://dcspcodu03jhc" path="res://scenes/hud.tscn" id="1_v40sh"]
-[ext_resource type="PackedScene" uid="uid://cb7ia5kcccw18" path="res://scenes/mob.tscn" id="3_vnisg"]
+
+[ext_resource type="PackedScene" uid="uid://cb7ia5kcccw18" path="res://scenes/baseEnemy.tscn" id="3_vnisg"]
+[ext_resource type="Texture2D" uid="uid://dcn0ejdsxewgl" path="res://assets/backgorund2.png" id="4_1ta3e"]
+[ext_resource type="Script" path="res://scripts/background.gd" id="5_c42j3"]
+
 
 [node name="Main" type="Node"]
 
@@ -10,9 +14,11 @@
 
 [node name="TheBubble" parent="." instance=ExtResource("1_r4mg2")]
 position = Vector2(578, 329)
+collision_layer = 2
 
 [node name="Mob" parent="." instance=ExtResource("3_vnisg")]
 
 [connection signal="bubblePosition" from="TheBubble" to="Mob" method="_on_the_bubble_bubble_position"]
 [connection signal="damaged" from="TheBubble" to="HUD" method="_on_the_bubble_damaged"]
 [connection signal="killed" from="TheBubble" to="HUD" method="_on_the_bubble_killed"]
+[connection signal="damage_bubble" from="Mob" to="TheBubble" method="_on_mob_damage_bubble"]

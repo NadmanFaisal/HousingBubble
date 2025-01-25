@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://8g62irhqiguw"]
+
+[ext_resource type="PackedScene" uid="uid://bgj8lwuchbeha" path="res://scenes/theBubble.tscn" id="1_27561"]
+[ext_resource type="PackedScene" uid="uid://cb7ia5kcccw18" path="res://scenes/baseEnemy.tscn" id="2_xdj73"]
+[ext_resource type="PackedScene" uid="uid://dcspcodu03jhc" path="res://scenes/hud.tscn" id="3_pg6x5"]
+
+[sub_resource type="GDScript" id="GDScript_wbqkb"]
+script/source = "extends Node
+
+@export var mob_scene: PackedScene 
+@onready var bubble = $TheBubble    
+
+func _ready() -> void:
+	pass
+
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Test" type="Node"]
+script = SubResource("GDScript_wbqkb")
+
+[node name="HUD" parent="." instance=ExtResource("3_pg6x5")]
+
+[node name="TheBubble" parent="." instance=ExtResource("1_27561")]
+position = Vector2(676, 451)
+
+[node name="Mob" parent="." instance=ExtResource("2_xdj73")]
+position = Vector2(91, 83)
+
+[connection signal="damaged" from="TheBubble" to="HUD" method="_on_the_bubble_damaged"]
+[connection signal="killed" from="TheBubble" to="HUD" method="_on_the_bubble_killed"]
+[connection signal="damage_bubble" from="Mob" to="TheBubble" method="_on_mob_damage_bubble"]

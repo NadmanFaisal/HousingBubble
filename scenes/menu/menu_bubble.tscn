@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb3mtk3k3flh"]
+
+[ext_resource type="Script" path="res://scripts/menu/menu_bubble.gd" id="1_s6ym6"]
+[ext_resource type="Texture2D" uid="uid://yo4jckk0mvlt" path="res://assets/pixelBubble.png" id="2_t1jri"]
+
+[node name="MenuBubble" type="Node2D"]
+script = ExtResource("1_s6ym6")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_t1jri")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

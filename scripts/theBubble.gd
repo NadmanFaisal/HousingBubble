@@ -18,9 +18,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("damageBubble"):
-		take_damage()
-	emit_signal("bubblePosition", global_position)
 	if Input.is_action_just_pressed("shoot"):
 		var mouse_position = get_viewport().get_mouse_position()
 		shoot()

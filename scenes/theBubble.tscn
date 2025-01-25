@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgj8lwuchbeha"]
 
 [ext_resource type="Script" path="res://scripts/area_2d.gd" id="1_ale75"]
-[ext_resource type="PackedScene" uid="uid://k1bhegv47peg" path="res://BubbleBullet.tscn" id="2_11cpe"]
+[ext_resource type="PackedScene" uid="uid://k1bhegv47peg" path="res://scenes/BubbleBullet.tscn" id="2_11cpe"]
 [ext_resource type="Texture2D" uid="uid://chat7bijk18ax" path="res://assets/bubble.png" id="2_wg1fv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0lrjl"]

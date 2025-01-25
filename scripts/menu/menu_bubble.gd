@@ -11,6 +11,10 @@ var MIN_SCALE = 0.5
 var speed: int
 var velocity: Vector2
 var angle: float
+var wiggle_amplitude = 5.0
+var wiggle_frequency = 1.0
+var time = 0.0
+var xAxis
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	speed = randi_range(MIN_SPEED, MAX_SPEED)
@@ -18,12 +22,15 @@ func _ready() -> void:
 	
 	velocity = Vector2.UP * speed / bubbleScale
 	scale = Vector2.ONE * bubbleScale
+	 
 	
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position += delta * velocity 
+	
+	time += delta
+	
+	position.x += wiggle_amplitude * sin(wiggle_frequency * time)
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:

@@ -8,6 +8,7 @@ size = Vector2(124, 116)
 
 [node name="Mob" type="Area2D" groups=["Enemies"]]
 position = Vector2(0, -2)
+collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_0w4q6")
 metadata/_edit_group_ = true

@@ -7,7 +7,6 @@
 size = Vector2(124, 116)
 
 [node name="Mob" type="CharacterBody2D"]
-position = Vector2(0, -2)
 script = ExtResource("1_0w4q6")
 metadata/_edit_group_ = true
 
@@ -17,3 +16,6 @@ shape = SubResource("RectangleShape2D_wussj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_cwva7")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(87, 0)

@@ -17,3 +17,6 @@ mono_crash.*.json
 
 # Mac
 .DS_Store
+
+# Testing playground scene
+scenes/test.tscn

@@ -1,0 +1,237 @@
+[gd_scene load_steps=21 format=3 uid="uid://c0ga8tkrjkbb8"]
+
+[ext_resource type="Script" path="res://root.gd" id="1_esqcy"]
+[ext_resource type="Texture2D" uid="uid://hl1epo7upsu0" path="res://assets/chillBubble.png" id="2_gla1j"]
+[ext_resource type="Texture2D" uid="uid://dhuie8i3236m5" path="res://assets/Textures/melon-usk-boss-texture Background Removed.png" id="3_g77ew"]
+[ext_resource type="FontFile" uid="uid://3xakgfsiuvig" path="res://assets/GameFont.otf" id="4_xfppm"]
+
+[sub_resource type="Gradient" id="Gradient_p6fox"]
+offsets = PackedFloat32Array(0.253247, 0.532468, 0.805195)
+colors = PackedColorArray(0, 0, 0.407843, 0.996078, 0, 0, 0, 1, 0.8, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fdkpu"]
+gradient = SubResource("Gradient_p6fox")
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sprke"]
+animation = &"new_animation_2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ra3qo"]
+animation = &"new_animation"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_70t3y"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_qxqpy"]
+graph_offset = Vector2(93.9191, 76.2854)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_ra3qo")
+nodes/Animation/position = Vector2(660, 80)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_sprke")
+"nodes/Animation 2/position" = Vector2(660, 260)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_70t3y")
+nodes/Blend2/position = Vector2(920, 120)
+nodes/output/position = Vector2(1180, 180)
+node_connections = [&"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2", &"output", 0, &"Blend2"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kxfxd"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_myywi"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_dwula"]
+states/BlendTree/node = SubResource("AnimationNodeBlendTree_qxqpy")
+states/BlendTree/position = Vector2(486, 100)
+transitions = ["Start", "BlendTree", SubResource("AnimationNodeStateMachineTransition_kxfxd"), "BlendTree", "End", SubResource("AnimationNodeStateMachineTransition_myywi")]
+graph_offset = Vector2(-227.463, 0)
+
+[sub_resource type="Animation" id="Animation_1o2lf"]
+resource_name = "new_animation"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/MelonEusk:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.420448, 0.420448),
+"update": 0,
+"values": [Vector2(1063, 1298), Vector2(1063, -649)]
+}
+
+[sub_resource type="Animation" id="Animation_28pu3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/MelonEusk:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1000, 641)]
+}
+
+[sub_resource type="Animation" id="Animation_dtp30"]
+resource_name = "new_animation_2"
+length = 0.04
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/MelonEusk:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1000, 641), Vector2(1020, 639)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ghjt7"]
+_data = {
+"RESET": SubResource("Animation_28pu3"),
+"new_animation": SubResource("Animation_1o2lf"),
+"new_animation_2": SubResource("Animation_dtp30")
+}
+
+[sub_resource type="Animation" id="Animation_j34bw"]
+resource_name = "bubbleDown"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Bubble:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3.72529e-08, 1.5),
+"transitions": PackedFloat32Array(0.574349, 0.196146),
+"update": 0,
+"values": [Vector2(800, -350), Vector2(600, 180)]
+}
+
+[sub_resource type="Animation" id="Animation_nwuab"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Bubble:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(486, -350)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jbrx3"]
+_data = {
+"RESET": SubResource("Animation_nwuab"),
+"bubbleDown": SubResource("Animation_j34bw")
+}
+
+[node name="Root" type="Node2D"]
+position = Vector2(-45, 90)
+script = ExtResource("1_esqcy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1016.75, 385.719)
+scale = Vector2(18.255, 9.56668)
+skew = 0.47473
+texture = SubResource("GradientTexture2D_fdkpu")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Bubble" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.875
+anchor_top = 3.6
+anchor_right = 24.525
+anchor_bottom = 18.25
+offset_left = 91.0
+offset_top = -494.0
+offset_right = -214.0
+offset_bottom = -798.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gla1j")
+expand_mode = 1
+
+[node name="MelonEusk" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 24.35
+anchor_top = -0.975
+anchor_right = 34.725
+anchor_bottom = 9.475
+offset_left = 26.0
+offset_top = 680.0
+offset_right = 26.0
+offset_bottom = 680.0
+texture = ExtResource("3_g77ew")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="BubbleName" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 502.0
+offset_right = 812.0
+offset_bottom = 604.0
+theme_override_fonts/font = ExtResource("4_xfppm")
+theme_override_font_sizes/font_size = 80
+text = "Bubble"
+
+[node name="MelonEuskName" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1196.0
+offset_top = 147.0
+offset_right = 1673.0
+offset_bottom = 257.0
+theme_override_fonts/font = ExtResource("4_xfppm")
+theme_override_font_sizes/font_size = 75
+text = "Melon Usk"
+
+[node name="VS" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 22.175
+anchor_top = 11.75
+anchor_right = 24.1
+anchor_bottom = 14.175
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("4_xfppm")
+theme_override_font_sizes/font_size = 100
+text = "VS"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_dwula")
+anim_player = NodePath("../AnimationPlayer")
+parameters/BlendTree/Blend2/blend_amount = 0.69
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ghjt7")
+}
+
+[node name="BubbleDown" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jbrx3")
+}

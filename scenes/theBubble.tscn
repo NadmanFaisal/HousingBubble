@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bgj8lwuchbeha"]
 
-[ext_resource type="Script" path="res://scripts/area_2d.gd" id="1_ale75"]
+[ext_resource type="Script" path="res://scripts/theBubble.gd" id="1_ale75"]
 [ext_resource type="Texture2D" uid="uid://b6cdloq6itkp2" path="res://assets/icon.svg" id="2_5roio"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0lrjl"]

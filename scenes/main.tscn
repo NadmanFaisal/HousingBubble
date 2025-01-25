@@ -8,6 +8,14 @@
 [node name="Main" type="Node"]
 
 [node name="HUD" parent="." instance=ExtResource("1_v40sh")]
+tower_scene = ExtResource("4_tbwpf")
+
+[node name="BuildTowerButton" type="Button" parent="HUD"]
+offset_left = 1593.0
+offset_top = 92.0
+offset_right = 1935.0
+offset_bottom = 188.0
+text = "Build Tower"
 
 [node name="TheBubble" parent="." instance=ExtResource("1_r4mg2")]
 position = Vector2(578, 329)
@@ -17,6 +25,7 @@ position = Vector2(578, 329)
 [node name="Tower" parent="." instance=ExtResource("4_tbwpf")]
 position = Vector2(1813, 700)
 
+[connection signal="pressed" from="HUD/BuildTowerButton" to="HUD" method="_on_build_tower_button_pressed"]
 [connection signal="bubblePosition" from="TheBubble" to="Mob" method="_on_the_bubble_bubble_position"]
 [connection signal="damaged" from="TheBubble" to="HUD" method="_on_the_bubble_damaged"]
 [connection signal="killed" from="TheBubble" to="HUD" method="_on_the_bubble_killed"]

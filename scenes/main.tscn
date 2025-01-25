@@ -15,7 +15,7 @@ position = Vector2(578, 329)
 [node name="Mob" parent="." instance=ExtResource("3_vnisg")]
 
 [node name="Tower" parent="." instance=ExtResource("4_tbwpf")]
-position = Vector2(321, 636)
+position = Vector2(1813, 700)
 
 [connection signal="bubblePosition" from="TheBubble" to="Mob" method="_on_the_bubble_bubble_position"]
 [connection signal="damaged" from="TheBubble" to="HUD" method="_on_the_bubble_damaged"]

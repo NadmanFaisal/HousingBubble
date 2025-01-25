@@ -1,6 +1,8 @@
 extends Area2D
 signal damaged(by)
-signal killed()
+signal killed
+
+var enemyInsideBubble = null
 signal bubblePosition(bubPos)
 
 var screen_size
@@ -23,18 +25,18 @@ func _process(delta: float) -> void:
 		var mouse_position = get_viewport().get_mouse_position()
 		shoot()
 		emit_signal("bubblePosition", global_position)
-		
-	
 
-func take_damage():
-	var damage = 10.0
+func take_damage(amount: int):
 	var prev_hp = hp
-	hp -= damage
+	hp -= amount
 	if prev_hp != hp:
-		emit_signal("damaged", damage)
+		emit_signal("damaged", amount)
 	if hp <= 0.0:
 		emit_signal("killed")
 
+func _on_mob_damage_bubble(amount: Variant) -> void:
+	print("potato")
+	take_damage(amount)
 func shoot():
 	print("spawned")
 	var bullet = bulletScene.instantiate()

@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends RigidBody2D
 
 var constantMovementVelocity = Vector2(1, 0)
 @export var speed = 300
@@ -15,10 +15,11 @@ func _physics_process(delta):
 		var collision_info = move_and_collide(direction * speed * delta)
 		if collision_info:
 			var collided_object = collision_info.get_collider()
-			if collided_object.is_in_group("mobs"):
+			if collided_object.is_in_group("Enemies"):
 				collided_object.take_damage(damage)
-				print("I collided with a mob")
+				print("I collided with an enemy")
 				queue_free()
-				
-		if position.distance_to(target_position) > 2000:
-			queue_free()
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()

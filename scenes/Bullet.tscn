@@ -6,9 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wde6o"]
 size = Vector2(130, 130)
 
-[node name="Bullet" type="CharacterBody2D"]
+[node name="Bullet" type="RigidBody2D"]
 collision_layer = 2
-collision_mask = 4
+collision_mask = 15
+gravity_scale = 0.0
 script = ExtResource("1_bsmf3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -22,3 +23,7 @@ position = Vector2(0.399999, 0.4)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_qxug4")
 metadata/_edit_group_ = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

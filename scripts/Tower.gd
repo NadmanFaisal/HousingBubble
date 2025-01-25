@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const bulletPath = preload("res://scenes/Bullet.tscn")
+@export var bulletScene: PackedScene
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,17 +16,19 @@ func _process(delta):
 	
 
 func shoot():
-	var mob = get_tree().get_nodes_in_group("mobs")
-	if mob.size() > 0:
-		var bullet = bulletPath.instantiate()
-		get_parent().add_child(bullet)
+	var enemies = get_tree().get_nodes_in_group("Enemies")
+	if enemies.size() > 0:
+		var bullet = bulletScene.instantiate()
+		
 		bullet.position = $Position2D.global_position
-		bullet.fire(mob[0].global_position)
+		bullet.direction = (enemies[0].global_position - bullet.position).normalized()
+		bullet.type = "TOWER_SHOT"
+		
+		get_parent().add_child(bullet)
 	else:
-		print("All mobs killed")
+		print("All enemies killed")
 
 
 
 func _on_timer_timeout() -> void:
-	print("I am being shot automatically")
 	shoot()

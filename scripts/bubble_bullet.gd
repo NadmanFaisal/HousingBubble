@@ -1,19 +1,39 @@
 extends Area2D
 
-const BULLET_SPEED= 1000
-@export var direction: Vector2
+var speed: int
+var damage: int
+var direction: Vector2
+var type: String
+
+enum SPEEDS {CASTLE_SHOT = 1000, TOWER_SHOT = 300}
+enum DAMAGE {CASTLE_SHOT = 1000, TOWER_SHOT = 25}
+
+const CASTLE_SHOT = "CASTLE_SHOT"
+const TOWER_SHOT = "TOWER_SHOT"
+
+
+
 
 func _ready() -> void:
-	pass
+	if(!type):
+		push_error("no type provided")
+	if(!direction):
+		push_error("no direction provided")
+	match type:
+		TOWER_SHOT: 
+			speed = SPEEDS.TOWER_SHOT
+			damage = DAMAGE.TOWER_SHOT
+		CASTLE_SHOT: 
+			speed = SPEEDS.CASTLE_SHOT
+			damage = DAMAGE.CASTLE_SHOT
+		_: push_error("Unknown bullet type")
+	direction = direction.normalized()
+	print("ready")
 	
 func _process (delta: float) -> void:
-	var velocity = direction * BULLET_SPEED
+	var velocity = direction * speed
 	position += velocity * delta
 	
-	
-#func _on_Bubble_Bullet_body_entered(body: Node) -> void:
-	#emit_signal("hit_target", body)
-	#queue_free()
 	
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	print("despawn")

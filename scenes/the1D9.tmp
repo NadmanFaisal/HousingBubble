@@ -7,7 +7,6 @@
 radius = 83.7257
 
 [node name="TheBubble" type="Area2D"]
-collision_layer = 2
 script = ExtResource("1_ale75")
 metadata/_edit_group_ = true
 

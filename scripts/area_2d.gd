@@ -1,27 +1,28 @@
 extends Area2D
 signal damaged(by)
-signal killed()
-signal bubblePosition(bubPos)
-var screen_size
+signal killed
+
+var enemyInsideBubble = null
 
 const HP_MAX = 100.0
 var hp = HP_MAX
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	screen_size = get_viewport_rect().size
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("damageBubble"):
-		take_damage()
-	emit_signal("bubblePosition", global_position)
+	pass
 
-func take_damage():
-	var damage = 10.0
+func take_damage(amount: int):
 	var prev_hp = hp
-	hp -= damage
+	hp -= amount
 	if prev_hp != hp:
-		emit_signal("damaged", damage)
+		emit_signal("damaged", amount)
 	if hp <= 0.0:
 		emit_signal("killed")
+
+func _on_mob_damage_bubble(amount: Variant) -> void:
+	print("potato")
+	take_damage(amount)

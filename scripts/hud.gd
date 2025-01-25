@@ -16,3 +16,7 @@ func _on_the_bubble_damaged(by: Variant) -> void:
 
 func _on_the_bubble_killed() -> void:
 	pass # Replace with function body.
+	
+func update_money(money) -> void:
+	$MoneyLabel.text = "Money: " + str(money)+"$"
+	

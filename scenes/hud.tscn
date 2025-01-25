@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcspcodu03jhc"]
+[gd_scene load_steps=4 format=3 uid="uid://dcspcodu03jhc"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_t08pe"]
+[ext_resource type="FontFile" uid="uid://3xakgfsiuvig" path="res://assets/GameFont.otf" id="2_fj383"]
 [ext_resource type="Script" path="res://scripts/bubble_hp.gd" id="2_tmsuk"]
 
 [node name="HUD" type="CanvasLayer"]
@@ -10,9 +11,23 @@ script = ExtResource("1_t08pe")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -100.0
-offset_right = 100.0
-offset_bottom = 27.0
+offset_left = -244.0
+offset_top = 2.0
+offset_right = 248.0
+offset_bottom = 89.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_fj383")
+theme_override_font_sizes/font_size = 64
 value = 100.0
 script = ExtResource("2_tmsuk")
+
+[node name="MoneyLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_fj383")
+theme_override_font_sizes/font_size = 64
+text = "Money: 0$"

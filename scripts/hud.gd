@@ -38,7 +38,7 @@ func place_tower(position: Vector2):
 		print("No tower scene assigned.")
 		return
 	var tower = tower_scene.instantiate()
-	get_tree().current_scene.add_child(tower)
+	add_child(tower)
 	tower.global_position = position
 	print("Tower placed at: ", position)
 	is_build_mode = false

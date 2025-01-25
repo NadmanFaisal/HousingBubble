@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcspcodu03jhc"]
+[gd_scene load_steps=5 format=3 uid="uid://dcspcodu03jhc"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_t08pe"]
 [ext_resource type="FontFile" uid="uid://3xakgfsiuvig" path="res://assets/GameFont.otf" id="2_fj383"]
+[ext_resource type="PackedScene" uid="uid://bwimw45kgn57k" path="res://scenes/Tower.tscn" id="2_oaws4"]
 [ext_resource type="Script" path="res://scripts/bubble_hp.gd" id="2_tmsuk"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_t08pe")
+tower_scene = ExtResource("2_oaws4")
 
 [node name="bubbleHP" type="ProgressBar" parent="."]
 anchors_preset = 5
@@ -31,3 +33,12 @@ grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_fj383")
 theme_override_font_sizes/font_size = 64
 text = "Money: 0$"
+
+[node name="BuildTowerButton" type="Button" parent="."]
+offset_left = 1593.0
+offset_top = 92.0
+offset_right = 1935.0
+offset_bottom = 188.0
+text = "Build Tower"
+
+[connection signal="pressed" from="BuildTowerButton" to="." method="_on_build_tower_button_pressed"]

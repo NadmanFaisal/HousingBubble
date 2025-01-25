@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgjqarbmuje2l"]
+
+[ext_resource type="PackedScene" uid="uid://bgj8lwuchbeha" path="res://scenes/theBubble.tscn" id="2_xbh6t"]
+[ext_resource type="PackedScene" uid="uid://k1bhegv47peg" path="res://BubbleBullet.tscn" id="3_nqtjx"]
+
+[node name="Test" type="Node"]
+
+[node name="TheBubble" parent="." instance=ExtResource("2_xbh6t")]
+position = Vector2(1048, 497)
+
+[node name="BubbleBullet" parent="." instance=ExtResource("3_nqtjx")]
+position = Vector2(0, 1)

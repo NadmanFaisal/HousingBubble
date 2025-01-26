@@ -1,10 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://3370efu28jlw"]
+[gd_scene load_steps=10 format=3 uid="uid://3370efu28jlw"]
 
 [ext_resource type="Script" path="res://scripts/baseEnemy.gd" id="1_0w4q6"]
-[ext_resource type="Texture2D" uid="uid://b6cdloq6itkp2" path="res://assets/icon.svg" id="1_cwva7"]
+[ext_resource type="Texture2D" uid="uid://b0cno3pxg4dnc" path="res://assets/Textures/fat-enemy-1.png" id="2_xhcdx"]
+[ext_resource type="Texture2D" uid="uid://bse7y2ix7jco2" path="res://assets/Textures/fat-enemy-2.png" id="3_idht3"]
+[ext_resource type="Texture2D" uid="uid://d0522e76xeca1" path="res://assets/Textures/fast-enemy-1 Background Removed.png" id="4_spmo5"]
+[ext_resource type="Texture2D" uid="uid://54ws1yxe3pku" path="res://assets/Textures/fast-enemy-2 Background Removed.png" id="5_h7d2p"]
+[ext_resource type="Texture2D" uid="uid://bli8y45t07s2" path="res://assets/Textures/normal-enemy-1 Background Removed.png" id="6_urtgh"]
+[ext_resource type="Texture2D" uid="uid://ch43so3efc2tu" path="res://assets/Textures/normal-enemy-2 Background Removed.png" id="7_ckfwa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wussj"]
 size = Vector2(124, 116)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fjor0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xhcdx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idht3")
+}],
+"loop": true,
+"name": &"big",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_spmo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h7d2p")
+}],
+"loop": true,
+"name": &"fast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_urtgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ckfwa")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
 
 [node name="Mob" type="Area2D" groups=["Enemies"]]
 position = Vector2(0, -2)
@@ -17,8 +58,10 @@ metadata/_edit_group_ = true
 position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_wussj")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_cwva7")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fjor0")
+animation = &"normal"
+frame_progress = 0.263744
 
 [node name="AttackSpeed" type="Timer" parent="."]
 

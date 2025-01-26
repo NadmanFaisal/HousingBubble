@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6uqm40tar7dg"]
+
+[ext_resource type="PackedScene" uid="uid://3370efu28jlw" path="res://scenes/baseEnemy.tscn" id="1_f2n5e"]
+[ext_resource type="Script" path="res://fast_enemy.gd" id="2_w0k6v"]
+
+[node name="FastEnemy" instance=ExtResource("1_f2n5e")]
+script = ExtResource("2_w0k6v")
+speed = 175
+health = 75
+attack_speed = 0.7
+currency = 4
+
+[node name="Sprite2D" parent="." index="1" groups=["Enemies"]]
+animation = &"fast"
+frame_progress = 0.0

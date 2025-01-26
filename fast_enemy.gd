@@ -4,11 +4,11 @@ signal dropped_currency
 signal damage_bubble(damage: int)
 signal death
 
-@export var speed = 100
-@export var health = 100
+@export var speed = 175
+@export var health = 75
 @export var damage = 5
-@export var attack_speed = 1.0
-@export var currency = 1
+@export var attack_speed = 0.7
+@export var currency = 4
 
 var rewardScene = preload("res://scenes/reward.tscn")
 
@@ -22,7 +22,7 @@ var target_position
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AttackSpeed.wait_time = attack_speed
-	$Sprite2D.play("normal")
+	$Sprite2D.play("fast")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

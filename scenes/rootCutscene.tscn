@@ -21,7 +21,7 @@ animation = &"new_animation"
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_70t3y"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_qxqpy"]
-graph_offset = Vector2(93.9191, 76.2854)
+graph_offset = Vector2(-252.605, 27.191)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_ra3qo")
 nodes/Animation/position = Vector2(660, 80)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_sprke")

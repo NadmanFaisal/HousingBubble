@@ -41,4 +41,8 @@ offset_right = 1935.0
 offset_bottom = 188.0
 text = "Build Tower"
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+
 [connection signal="pressed" from="BuildTowerButton" to="." method="_on_build_tower_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -7,7 +7,9 @@ var animation_instance = preload("res://scenes/rootCutscene.tscn").instantiate()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass 
+	
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,6 +44,7 @@ func _on_main_money_update(money: int) -> void:
 
 func _on_main_not_enough_money() -> void:
 	$NotEnoughMoney.start()
+
 func _on_timer_timeout() -> void:
 	print("Removing animation")
 	remove_child(animation_instance)

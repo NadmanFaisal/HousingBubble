@@ -25,4 +25,5 @@ func _on_start_pressed() -> void:
 func _on_chill_guy_timer_timeout() -> void:
 	remove_child(chill_guy_animation)
 	$ChillGuyTimer.stop()
+	$AudioStreamPlayer2D.play()
 	

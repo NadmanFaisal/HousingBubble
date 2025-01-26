@@ -43,7 +43,7 @@ func _on_build_tower_button_pressed() -> void:
 	var money_text = $MoneyLabel.text
 	if money_text.begins_with("Money: "):
 		var amount = int(money_text.replace("Money: ", "").replace("$", ""))
-		if amount > 5:
+		if amount >= 5:
 			$AudioStreamPlayer2D3.play()
 		
 	

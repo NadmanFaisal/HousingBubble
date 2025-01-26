@@ -6,7 +6,7 @@ var direction: Vector2
 var type: String
 
 enum SPEEDS {CASTLE_SHOT = 1000, TOWER_SHOT = 300}
-enum DAMAGE {CASTLE_SHOT = 1000, TOWER_SHOT = 25}
+enum DAMAGE {CASTLE_SHOT = 100, TOWER_SHOT = 25}
 
 const CASTLE_SHOT = "CASTLE_SHOT"
 const TOWER_SHOT = "TOWER_SHOT"

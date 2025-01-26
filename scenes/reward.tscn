@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://63esmkxrekj1"]
+
+[ext_resource type="FontFile" uid="uid://3xakgfsiuvig" path="res://assets/GameFont.otf" id="1_7jq5h"]
+[ext_resource type="Script" path="res://scripts/reward.gd" id="2_yie35"]
+
+[node name="Reward" type="Label"]
+offset_left = -16.0
+offset_top = -88.0
+offset_right = 15.0
+offset_bottom = -65.0
+theme_override_colors/font_color = Color(1, 0.701961, 0, 1)
+theme_override_fonts/font = ExtResource("1_7jq5h")
+theme_override_font_sizes/font_size = 24
+text = "+1$"
+script = ExtResource("2_yie35")
+
+[node name="reward_timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="reward_timer" to="." method="_on_reward_timer_timeout"]

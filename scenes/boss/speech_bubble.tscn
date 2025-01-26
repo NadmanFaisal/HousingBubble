@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://4wd0tx662286"]
+
+[ext_resource type="Texture2D" uid="uid://ffevgkvudws6" path="res://assets/Textures/melon-usk-boss-texture Background Removed.png" id="1_ijhw7"]
+[ext_resource type="Script" path="res://scripts/speech_bubble.gd" id="1_oe753"]
+[ext_resource type="FontFile" uid="uid://3xakgfsiuvig" path="res://assets/GameFont.otf" id="2_t2vi5"]
+[ext_resource type="Script" path="res://scripts/portrait.gd" id="3_gmctf"]
+[ext_resource type="Script" path="res://scripts/speech.gd" id="5_h1my2"]
+
+[node name="SpeechBubble" type="CanvasLayer"]
+script = ExtResource("1_oe753")
+
+[node name="Portrait" type="TextureRect" parent="."]
+offset_left = 26.0
+offset_top = 751.0
+offset_right = 1050.0
+offset_bottom = 1775.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_ijhw7")
+script = ExtResource("3_gmctf")
+
+[node name="Speech" type="Label" parent="."]
+offset_left = 270.0
+offset_top = 770.0
+offset_right = 1770.0
+offset_bottom = 975.0
+theme_override_fonts/font = ExtResource("2_t2vi5")
+theme_override_font_sizes/font_size = 48
+text = "Wake up, it's your daily parkour check. Oh, here we go again. Here, in parkour civilization, no ones goes for the beef. "
+autowrap_mode = 2
+script = ExtResource("5_h1my2")
+
+[node name="SpeechTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="DespawnTimer" type="Timer" parent="."]
+
+[connection signal="done" from="Speech" to="." method="_on_speech_done"]
+[connection signal="timeout" from="SpeechTimer" to="Portrait" method="_on_jiggle_timer_timeout"]
+[connection signal="timeout" from="SpeechTimer" to="Speech" method="_on_speech_timer_timeout"]
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

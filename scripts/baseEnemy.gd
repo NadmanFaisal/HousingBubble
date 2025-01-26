@@ -9,6 +9,8 @@ signal death
 @export var attack_speed = 1.0
 @export var currency = 1
 
+var rewardScene = preload("res://scenes/reward.tscn")
+
 
 var insideBubble = false
 
@@ -61,8 +63,12 @@ func _on_area_exited(area: Area2D) -> void:
 func die():
 	death.emit()
 	emit_signal("dropped_currency", currency)
-	queue_free()
 	
+	var reward = rewardScene.instantiate()
+	reward.position = position
+	get_parent().add_child(reward)
+	
+	queue_free();
 
 func _on_attack_speed_timeout() -> void:
 	damage_bubble.emit(damage)

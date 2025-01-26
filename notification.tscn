@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw1lfgxx0n6mn"]
+
+[ext_resource type="Script" path="res://scripts/notification.gd" id="1_ev51l"]
+[ext_resource type="Texture2D" uid="uid://b6cdloq6itkp2" path="res://assets/icon.svg" id="2_vx5o2"]
+
+[node name="Notification" type="CanvasLayer"]
+script = ExtResource("1_ev51l")
+
+[node name="Ad" type="TextureRect" parent="."]
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("2_vx5o2")
+
+[node name="Close" type="Button" parent="."]
+offset_left = 110.0
+offset_right = 128.0
+offset_bottom = 31.0
+text = "X"
+icon_alignment = 1
+expand_icon = true

@@ -8,6 +8,7 @@
 size = Vector2(129, 129)
 
 [node name="Tower" type="CharacterBody2D"]
+collision_layer = 16
 collision_mask = 0
 script = ExtResource("1_1sc3o")
 bulletScene = ExtResource("2_pujki")

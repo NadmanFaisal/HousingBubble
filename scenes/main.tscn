@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://blsrffh0lxy8b"]
+[gd_scene load_steps=14 format=3 uid="uid://blsrffh0lxy8b"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_linne"]
 [ext_resource type="PackedScene" uid="uid://bgj8lwuchbeha" path="res://scenes/theBubble.tscn" id="1_r4mg2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://binujl2th4l6p" path="res://scenes/boss/Boss.tscn" id="4_ejlvg"]
 [ext_resource type="Script" path="res://scripts/kill_count.gd" id="5_3ln6f"]
 [ext_resource type="PackedScene" uid="uid://4wd0tx662286" path="res://scenes/boss/speech_bubble.tscn" id="5_lito4"]
+[ext_resource type="PackedScene" uid="uid://cw1lfgxx0n6mn" path="res://scenes/notification.tscn" id="7_gm5o5"]
 [ext_resource type="PackedScene" uid="uid://ibw8xwblhk8" path="res://scenes/boss/car.tscn" id="8_k48kc"]
 
 [sub_resource type="Curve2D" id="Curve2D_l5ryv"]
@@ -17,6 +18,12 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Curve2D" id="Curve2D_hpv1p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 82, 105, 0, 0, 0, 0, 1652, 238, 0, 0, 0, 0, 1717, 490, 0, 0, 0, 0, 90, 382, 0, 0, 0, 0, 95, 683, 0, 0, 0, 0, 1716, 665, 0, 0, 0, 0, 1716, 941, 0, 0, 0, 0, 100, 927)
+}
+point_count = 8
+
 [node name="Main" type="Node"]
 script = ExtResource("1_linne")
 goonScene = ExtResource("2_7kot1")
@@ -24,6 +31,7 @@ tower_scene = ExtResource("3_qjbvq")
 boss_scene = ExtResource("4_ejlvg")
 speech_scene = ExtResource("5_lito4")
 carScene = ExtResource("8_k48kc")
+adScene = ExtResource("7_gm5o5")
 
 [node name="HUD" parent="." instance=ExtResource("1_v40sh")]
 
@@ -51,6 +59,28 @@ rotation = 0.00050025
 [node name="Car" parent="." instance=ExtResource("8_k48kc")]
 position = Vector2(284, 305)
 
+[node name="AdsSpawnerPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_hpv1p")
+
+[node name="AdsSpawner" type="PathFollow2D" parent="AdsSpawnerPath"]
+position = Vector2(82, 105)
+rotation = 0.0845116
+
+[node name="AdsSpawnTimer" type="Timer" parent="AdsSpawnerPath"]
+wait_time = 2.0
+
+[node name="laserTest1" type="Marker2D" parent="."]
+position = Vector2(1552, 147)
+
+[node name="laserTest2" type="Marker2D" parent="."]
+position = Vector2(1025, 798)
+
+[node name="laserTest3" type="Marker2D" parent="."]
+position = Vector2(477, 203)
+
+[node name="Stage3Timer" type="Timer" parent="."]
+wait_time = 7.0
+
 [connection signal="damage_bubble" from="." to="TheBubble" method="_on_mob_damage_bubble"]
 [connection signal="kill_counter_update" from="." to="HUD/KillCount" method="_on_main_kill_counter_update"]
 [connection signal="money_update" from="." to="HUD" method="_on_main_money_update"]
@@ -59,3 +89,5 @@ position = Vector2(284, 305)
 [connection signal="damaged" from="TheBubble" to="HUD" method="_on_the_bubble_damaged"]
 [connection signal="killed" from="TheBubble" to="HUD" method="_on_the_bubble_killed"]
 [connection signal="timeout" from="GoonSpawnerPath/GoonTimer" to="." method="_on_goon_timer_timeout"]
+[connection signal="timeout" from="AdsSpawnerPath/AdsSpawnTimer" to="." method="_on_ads_spawn_timer_timeout"]
+[connection signal="timeout" from="Stage3Timer" to="." method="_on_stage_3_timer_timeout"]

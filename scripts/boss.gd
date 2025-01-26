@@ -6,12 +6,14 @@ signal stage2
 signal stage3
 
 
-@export var max_health = 1000
+@export var max_health = 4000
 const STAGE2_MILESTONE = 0.75	# hp% trigger for stage 2
 const STAGE3_MILESTONE = 0.2		# hp% trigger for stage 3
 
 
-@export var speed = 50
+var laser_speed = 1000
+
+@export var speed = 30
 @export var damage = 5
 @export var attack_speed = 1.0
 @export var currency = 1
@@ -23,18 +25,38 @@ var stage3_started = false
 
 var insideBubble = false
 
+var shooting = false
+var laser_direction: Vector2
+
 var bubble_position
 var target_position
 @onready var bubble = get_parent().get_node("TheBubble")
+
+var screen
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	health =  max_health
 	$AttackSpeed.wait_time = attack_speed
+	screen = get_viewport_rect().end
+	print("Screen ", screen)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	#if Input.is_key_pressed(KEY_L) and !shooting:
+		#var start = get_parent().get_node("laserTest1").global_position
+		#var direction = get_parent().get_node("laserTest2").global_position - get_parent().get_node("laserTest1").global_position
+		#direction = direction.normalized()
+		#shoot_lasers(start, direction)
+	
+	if shooting:
+		$LeftEye/leftLaser.points[1] += delta * laser_speed * laser_direction
+		$RightEye/rightLaser.points[1] += delta * laser_speed * laser_direction
+		var x = $LeftEye/leftLaser.points[1].x + position.x
+		var y = $LeftEye/leftLaser.points[1].y + position.y
+		print(x, y)
+		if x > screen.x or x < 0 or y > screen.y or y < 0:
+			stop_shooting()
 	
 func _physics_process(delta: float) -> void:
 	bubble_position = bubble.position
@@ -83,3 +105,32 @@ func die():
 
 func _on_attack_speed_timeout() -> void:
 	damage_bubble.emit(damage)
+	
+func shoot_lasers(start: Vector2, direction: Vector2):
+	var left_eye = $LeftEye.position
+	var right_eye = $RightEye.position
+	
+	var eye_dist = abs(left_eye.x - right_eye.x)
+	
+	var left_laser = Vector2(start.x + eye_dist / 2, start.y) - position
+	var right_laser = Vector2(start.x - eye_dist / 2, start.y) - position
+
+	
+	
+	$LeftEye/leftLaser.points[1] = left_laser
+	$RightEye/rightLaser.points[1] = right_laser
+	
+	$LeftEye/leftLaser.show()
+	$RightEye/rightLaser.show()
+	laser_direction = direction
+	shooting = true
+
+func stop_shooting():
+	shooting = false
+	$LeftEye/leftLaser.hide()
+	$RightEye/rightLaser.hide()
+	
+
+
+func _on_laser_hitbox_body_entered(body: Node2D) -> void:
+	body.queue_free()

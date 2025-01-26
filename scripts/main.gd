@@ -10,6 +10,7 @@ signal not_enough_money
 @export var boss_scene: PackedScene
 @export var speech_scene: PackedScene
 @export var carScene: PackedScene
+@export var adScene: PackedScene
 
 var goons_defeated: int
 var money: int
@@ -22,6 +23,7 @@ var speech_stage3
 
 const stage1_text = "Get a taste of some super cars."
 const stage2_text = "You've got some new notifications from Y: (almost) everything app."
+const stage3_text = "Jokes over, I'm activating my NeuroLunk™"
 
 var stage1_started: bool
 var stage2_started: bool
@@ -37,6 +39,10 @@ func _ready() -> void:
 	speech_stage2.speech = stage2_text
 	speech_stage2.speech_ended.connect(_on_stage2_speech_end)
 	
+	speech_stage3 = speech_scene.instantiate()
+	speech_stage3.speech = stage3_text
+	speech_stage3.speech_ended.connect(_on_stage3_speech_end)
+	
 	start_game()
 	
 
@@ -45,6 +51,10 @@ func _process(delta: float) -> void:
 	if Input.is_key_label_pressed(KEY_SPACE) and !boss_battle:
 		boss_battle = true
 		start_boss_battle()
+		
+	if Input.is_key_label_pressed(KEY_P):
+		_on_ads_spawn_timer_timeout()
+		
 
 func start_game():
 	goons_defeated = 0
@@ -125,10 +135,12 @@ func _on_stage1_speech_end():
 	start_stage1()
 
 func _on_stage2_speech_end():
-	start_stage2()
+	# stage starts at the same time as speech
+	pass
 	
 func _on_stage3_speech_end():
 	start_stage3()
+	_on_stage_3_timer_timeout()
 
 func start_stage1():
 	stage1_started = true
@@ -136,17 +148,45 @@ func start_stage1():
 	
 func start_stage2_speech():
 	add_child(speech_stage2)
+	start_stage2()
 
 func start_stage2():
 	stage2_started = true
+	$AdsSpawnerPath/AdsSpawnTimer.start()
+	_on_ads_spawn_timer_timeout()
 
 func start_stage3_speech():
-	pass
+	add_child(speech_stage3)
 	
 func start_stage3():
 	stage3_started = true
+	$Stage3Timer.start()
 	
 func victory():
-	pass
+	$GoonSpawnerPath/GoonTimer.stop()
+	$AdsSpawnerPath/AdsSpawnTimer.stop()
+	$Stage3Timer.stop()
+	#todo: load victory screen
 
+func _on_ads_spawn_timer_timeout() -> void:
+	var ad = adScene.instantiate()
 	
+	var spawner = $AdsSpawnerPath/AdsSpawner
+	spawner.progress_ratio = randf()
+	
+	ad.position = spawner.position
+	
+	ad.scale *= randf_range(0.75, 2.0)
+	
+	add_child(ad)
+
+
+func _on_stage_3_timer_timeout() -> void:
+	var boss = get_node("Boss")
+	if !boss:
+		return
+	var points = [$laserTest1.position, $laserTest2.position, $laserTest3.position]
+	var rand = randi_range(0, 2)
+	var start = points[rand]
+	var dir = (-points[rand] + points[(rand+1) % 3]).normalized()
+	boss.shoot_lasers(start, dir)

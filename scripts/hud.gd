@@ -2,6 +2,7 @@ extends CanvasLayer
 
 signal money_update(money: int)
 signal build_tower
+signal finish_cutscene
 
 var animation_instance = preload("res://scenes/rootCutscene.tscn").instantiate()
 
@@ -12,10 +13,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		print("Melon Eusk being called")
-		add_child(animation_instance)
-		$Timer.start()
+	# if Input.is_action_just_pressed("ui_accept"):
+	pass
+
+func start_cutscene():
+	print("Melon Eusk being called")
+	add_child(animation_instance)
+	$Timer.start()
 
 func _on_instance_timer_timeout(instance: Node) -> void:
 	if instance:
@@ -46,3 +50,5 @@ func _on_timer_timeout() -> void:
 	print("Removing animation")
 	remove_child(animation_instance)
 	$Timer.stop()
+	finish_cutscene.emit()
+	

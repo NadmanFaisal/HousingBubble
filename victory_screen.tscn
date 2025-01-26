@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dovy4nvjouuom"]
+
+[ext_resource type="Script" path="res://victory_screen.gd" id="1_gsfqs"]
+[ext_resource type="FontFile" uid="uid://p8swtydt311q" path="res://assets/GameFont.otf" id="1_kdmbl"]
+
+[node name="Victory" type="Node"]
+script = ExtResource("1_gsfqs")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 505.0
+offset_top = 123.0
+offset_right = 1575.0
+offset_bottom = 375.0
+theme_override_fonts/font = ExtResource("1_kdmbl")
+theme_override_font_sizes/font_size = 64
+text = "Congratualtions! You safely deflated housing bubble!"
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

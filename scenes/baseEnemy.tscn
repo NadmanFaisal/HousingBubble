@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ch43so3efc2tu" path="res://assets/Textures/normal-enemy-2 Background Removed.png" id="7_ckfwa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wussj"]
-size = Vector2(124, 116)
+size = Vector2(44, 111)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fjor0"]
 animations = [{
@@ -55,10 +55,11 @@ script = ExtResource("1_0w4q6")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -1)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_wussj")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.34, 0.34)
 sprite_frames = SubResource("SpriteFrames_fjor0")
 animation = &"normal"
 frame_progress = 0.263744

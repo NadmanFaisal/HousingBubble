@@ -2,7 +2,7 @@ extends Area2D
 
 signal dropped_currency
 signal damage_bubble(damage: int)
-signal death
+signal death(currency)
 
 @export var speed = 50
 @export var health = 250
@@ -63,11 +63,12 @@ func _on_area_exited(area: Area2D) -> void:
 	insideBubble = false
 
 func die():
-	death.emit()
+	death.emit(currency)
 	emit_signal("dropped_currency", currency)
 	
 	var reward = rewardScene.instantiate()
 	reward.position = position
+	reward.value = currency
 	get_parent().add_child(reward)
 	
 	queue_free();

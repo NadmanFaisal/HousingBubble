@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://yx10ug2s1x0q"]
+
+[ext_resource type="Script" path="res://fast_enemy.gd" id="1_f5nrj"]
+[ext_resource type="Texture2D" uid="uid://b0cno3pxg4dnc" path="res://assets/Textures/fat-enemy-1.png" id="2_36pqa"]
+[ext_resource type="Texture2D" uid="uid://bse7y2ix7jco2" path="res://assets/Textures/fat-enemy-2.png" id="3_m4wnt"]
+[ext_resource type="Texture2D" uid="uid://d0522e76xeca1" path="res://assets/Textures/fast-enemy-1 Background Removed.png" id="4_ghmnb"]
+[ext_resource type="Texture2D" uid="uid://54ws1yxe3pku" path="res://assets/Textures/fast-enemy-2 Background Removed.png" id="5_nri5a"]
+[ext_resource type="Texture2D" uid="uid://bli8y45t07s2" path="res://assets/Textures/normal-enemy-1 Background Removed.png" id="6_jawni"]
+[ext_resource type="Texture2D" uid="uid://ch43so3efc2tu" path="res://assets/Textures/normal-enemy-2 Background Removed.png" id="7_qs2dm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wussj"]
+size = Vector2(88, 145)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fjor0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_36pqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m4wnt")
+}],
+"loop": true,
+"name": &"big",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ghmnb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nri5a")
+}],
+"loop": true,
+"name": &"fast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jawni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qs2dm")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[node name="Mob" type="Area2D" groups=["Enemies"]]
+position = Vector2(0, -2)
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_f5nrj")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_wussj")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fjor0")
+animation = &"fast"
+
+[node name="AttackSpeed" type="Timer" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="AttackSpeed" to="." method="_on_attack_speed_timeout"]

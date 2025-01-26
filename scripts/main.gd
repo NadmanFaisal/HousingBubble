@@ -4,8 +4,12 @@ signal damage_bubble(damage: int)
 signal kill_counter_update(kill_count: int)
 signal money_update(money: int)
 signal not_enough_money
+signal start_cutscene
 
-@export var goonScene: PackedScene
+@export var bigGoon: PackedScene
+@export var normalGoon: PackedScene
+@export var fastGoon: PackedScene
+
 @export var tower_scene: PackedScene
 @export var boss_scene: PackedScene
 @export var speech_scene: PackedScene
@@ -29,6 +33,12 @@ var stage1_started: bool
 var stage2_started: bool
 var stage3_started: bool
 
+var goonScenes = [normalGoon, bigGoon, fastGoon]
+var wave = 0
+
+var wave1_milestone = 10
+var wave2_milestone = 20
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	speech_stage1 = speech_scene.instantiate()
@@ -43,18 +53,24 @@ func _ready() -> void:
 	speech_stage3.speech = stage3_text
 	speech_stage3.speech_ended.connect(_on_stage3_speech_end)
 	
+	
+	goonScenes = [normalGoon, bigGoon, fastGoon]
 	start_game()
+	
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_key_label_pressed(KEY_SPACE) and !boss_battle:
+	if goons_defeated >= 100 and !boss_battle:
 		boss_battle = true
-		start_boss_battle()
+		start_cutscene.emit()
 		
 	if Input.is_key_label_pressed(KEY_P):
 		_on_ads_spawn_timer_timeout()
 		
+
+func finish_cutscene():
+	start_boss_battle()
 
 func start_game():
 	goons_defeated = 0
@@ -69,6 +85,11 @@ func _on_goon_timer_timeout() -> void:
 		var car = carScene.instantiate()
 		spawn_goon(car)
 	else:
+		var random_enemy = randi_range(0, wave)
+		var goonScene = goonScenes[random_enemy]
+		print(random_enemy)
+		print(goonScene)
+		print(normalGoon)
 		var goon = goonScene.instantiate()
 		spawn_goon(goon)
 	
@@ -80,14 +101,20 @@ func spawn_goon(goon: Node):
 	goon_spawner.progress_ratio = randf()
 	
 	goon.position = goon_spawner.position
+	if goon.position.x > $TheBubble.position.x:
+		goon.get_node("Sprite2D").flip_h = true
 	add_child(goon)
 
 func _on_goon_damage_bubble(damage: int):
 	emit_signal("damage_bubble", damage)
 
-func _on_goon_death():
+func _on_goon_death(currency):
 	goons_defeated += 1
-	money += 1
+	money += currency
+	if goons_defeated > wave1_milestone:
+		wave = 1
+	if goons_defeated > wave2_milestone:
+		wave = 2
 	kill_counter_update.emit(goons_defeated)
 	money_update.emit(money)
 

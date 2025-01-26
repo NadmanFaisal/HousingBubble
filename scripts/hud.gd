@@ -42,6 +42,7 @@ func _on_main_money_update(money: int) -> void:
 
 func _on_main_not_enough_money() -> void:
 	$NotEnoughMoney.start()
+
 func _on_timer_timeout() -> void:
 	print("Removing animation")
 	remove_child(animation_instance)

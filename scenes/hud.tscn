@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://dcspcodu03jhc"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_t08pe"]
-[ext_resource type="FontFile" uid="uid://3xakgfsiuvig" path="res://assets/GameFont.otf" id="2_fj383"]
+[ext_resource type="FontFile" uid="uid://bnhrps1snxp3w" path="res://assets/GameFont.otf" id="2_fj383"]
 [ext_resource type="Script" path="res://scripts/bubble_hp.gd" id="2_tmsuk"]
 [ext_resource type="Script" path="res://scripts/money_label.gd" id="5_7nqts"]
-[ext_resource type="Texture2D" uid="uid://d2qgo5paku8sc" path="res://assets/tower.png" id="5_1833l"]
+[ext_resource type="Texture2D" uid="uid://dx23owbi15nrn" path="res://assets/tower.png" id="5_1833l"]
 [ext_resource type="Script" path="res://scripts/not_enough_money.gd" id="5_pqqth"]
 
 [node name="HUD" type="CanvasLayer"]
@@ -71,6 +71,10 @@ script = ExtResource("5_pqqth")
 wait_time = 2.0
 one_shot = true
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.5
+
 [connection signal="money_update" from="." to="MoneyLabel" method="_on_hud_money_update"]
 [connection signal="pressed" from="BuildTowerButton" to="." method="_on_build_tower_button_pressed"]
 [connection signal="timeout" from="NotEnoughMoney/ErrorTimer" to="NotEnoughMoney" method="_on_error_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

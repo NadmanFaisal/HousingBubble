@@ -45,6 +45,21 @@ states/BlendTree/position = Vector2(486, 100)
 transitions = ["Start", "BlendTree", SubResource("AnimationNodeStateMachineTransition_kxfxd"), "BlendTree", "End", SubResource("AnimationNodeStateMachineTransition_myywi")]
 graph_offset = Vector2(-227.463, 0)
 
+[sub_resource type="Animation" id="Animation_28pu3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/MelonEusk:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1000, 641)]
+}
+
 [sub_resource type="Animation" id="Animation_1o2lf"]
 resource_name = "new_animation"
 length = 3.0
@@ -60,21 +75,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.420448, 0.420448),
 "update": 0,
 "values": [Vector2(1063, 1298), Vector2(1063, -649)]
-}
-
-[sub_resource type="Animation" id="Animation_28pu3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/MelonEusk:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1000, 641)]
 }
 
 [sub_resource type="Animation" id="Animation_dtp30"]
@@ -101,6 +101,21 @@ _data = {
 "new_animation_2": SubResource("Animation_dtp30")
 }
 
+[sub_resource type="Animation" id="Animation_nwuab"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Bubble:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(486, -350)]
+}
+
 [sub_resource type="Animation" id="Animation_j34bw"]
 resource_name = "bubbleDown"
 length = 1.5
@@ -115,21 +130,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.574349, 0.196146),
 "update": 0,
 "values": [Vector2(800, -350), Vector2(600, 180)]
-}
-
-[sub_resource type="Animation" id="Animation_nwuab"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Bubble:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(486, -350)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jbrx3"]

@@ -14,6 +14,33 @@ colors = PackedColorArray(0, 0, 0.407843, 0.996078, 0, 0, 0, 1, 0.8, 0, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fdkpu"]
 gradient = SubResource("Gradient_p6fox")
 
+[sub_resource type="Animation" id="Animation_3i81b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/MelonEuskName:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Melon Usk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/MelonEuskName:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
 [sub_resource type="Animation" id="Animation_phvxj"]
 resource_name = "revealName"
 length = 8.0
@@ -43,33 +70,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(2.37841, 1, 1, 1),
 "update": 0,
 "values": [1.0, 0.2, 0.4, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_3i81b"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/MelonEuskName:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Melon Usk"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Control/MelonEuskName:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m1ies"]
@@ -255,10 +255,10 @@ anchor_left = 24.35
 anchor_top = -0.975
 anchor_right = 34.725
 anchor_bottom = 9.475
-offset_left = 26.0
-offset_top = 680.0
-offset_right = 26.0
-offset_bottom = 680.0
+offset_left = 185.644
+offset_top = 253.615
+offset_right = 185.644
+offset_bottom = 253.615
 texture = ExtResource("3_g77ew")
 expand_mode = 1
 flip_h = true

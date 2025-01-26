@@ -68,5 +68,9 @@ rotation = -0.000532198
 [node name="BubbleTimer" type="Timer" parent="Background"]
 wait_time = 0.3
 
+[node name="ChillGuyTimer" type="Timer" parent="."]
+wait_time = 8.0
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="timeout" from="Background/BubbleTimer" to="Background" method="_on_bubble_timer_timeout"]
+[connection signal="timeout" from="ChillGuyTimer" to="." method="_on_chill_guy_timer_timeout"]

@@ -1,9 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://c0ga8tkrjkbb8"]
+[gd_scene load_steps=25 format=3 uid="uid://c0ga8tkrjkbb8"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_esqcy"]
 [ext_resource type="Texture2D" uid="uid://hl1epo7upsu0" path="res://assets/chillBubble.png" id="2_gla1j"]
 [ext_resource type="Texture2D" uid="uid://dhuie8i3236m5" path="res://assets/Textures/melon-usk-boss-texture Background Removed.png" id="3_g77ew"]
 [ext_resource type="FontFile" uid="uid://3xakgfsiuvig" path="res://assets/GameFont.otf" id="4_xfppm"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_85mhp"]
 
 [sub_resource type="Gradient" id="Gradient_p6fox"]
 offsets = PackedFloat32Array(0.253247, 0.532468, 0.805195)
@@ -11,6 +13,70 @@ colors = PackedColorArray(0, 0, 0.407843, 0.996078, 0, 0, 0, 1, 0.8, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fdkpu"]
 gradient = SubResource("Gradient_p6fox")
+
+[sub_resource type="Animation" id="Animation_phvxj"]
+resource_name = "revealName"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/MelonEuskName:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.13333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["???
+", "Melon Usk
+
+"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/MelonEuskName:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6.13333, 6.46667, 6.76667),
+"transitions": PackedFloat32Array(2.37841, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.2, 0.4, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_3i81b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/MelonEuskName:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Melon Usk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/MelonEuskName:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m1ies"]
+_data = {
+"RESET": SubResource("Animation_3i81b"),
+"revealName": SubResource("Animation_phvxj")
+}
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sprke"]
 animation = &"new_animation_2"
@@ -21,7 +87,7 @@ animation = &"new_animation"
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_70t3y"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_qxqpy"]
-graph_offset = Vector2(93.9191, 76.2854)
+graph_offset = Vector2(118.364, 156.727)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_ra3qo")
 nodes/Animation/position = Vector2(660, 80)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_sprke")
@@ -62,8 +128,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_1o2lf"]
 resource_name = "new_animation"
-length = 3.0
-loop_mode = 1
+length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -71,10 +136,10 @@ tracks/0/path = NodePath("Control/MelonEusk:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(0.420448, 0.420448),
+"times": PackedFloat32Array(1.76667, 6),
+"transitions": PackedFloat32Array(0.420448, 0.757858),
 "update": 0,
-"values": [Vector2(1063, 1298), Vector2(1063, -649)]
+"values": [Vector2(700, 2000), Vector2(1463, -649)]
 }
 
 [sub_resource type="Animation" id="Animation_dtp30"]
@@ -129,7 +194,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(3.72529e-08, 1.5),
 "transitions": PackedFloat32Array(0.574349, 0.196146),
 "update": 0,
-"values": [Vector2(800, -350), Vector2(600, 180)]
+"values": [Vector2(800, -350), Vector2(450, 300)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jbrx3"]
@@ -139,14 +204,9 @@ _data = {
 }
 
 [node name="Root" type="Node2D"]
-position = Vector2(-45, 90)
+position = Vector2(-49, 91)
+scale = Vector2(1.00588, 1)
 script = ExtResource("1_esqcy")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1016.75, 385.719)
-scale = Vector2(18.255, 9.56668)
-skew = 0.47473
-texture = SubResource("GradientTexture2D_fdkpu")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -154,6 +214,22 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="TextureRect" parent="Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 46.0
+offset_top = -96.0
+offset_right = 2046.0
+offset_bottom = 912.0
+texture = SubResource("CanvasTexture_85mhp")
+metadata/_edit_use_anchors_ = true
+
+[node name="GradientBackground" type="Sprite2D" parent="Control"]
+position = Vector2(1054.24, 410)
+scale = Vector2(22.8892, 17.5677)
+skew = 0.47473
+texture = SubResource("GradientTexture2D_fdkpu")
 
 [node name="Bubble" type="TextureRect" parent="Control"]
 layout_mode = 1
@@ -170,6 +246,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_gla1j")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="MelonEusk" type="TextureRect" parent="Control"]
 layout_mode = 1
@@ -189,33 +266,48 @@ metadata/_edit_use_anchors_ = true
 
 [node name="BubbleName" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 472.0
-offset_top = 502.0
-offset_right = 812.0
-offset_bottom = 604.0
+offset_left = 320.0
+offset_top = 676.0
+offset_right = 660.0
+offset_bottom = 778.0
+theme_override_constants/outline_size = 40
 theme_override_fonts/font = ExtResource("4_xfppm")
 theme_override_font_sizes/font_size = 80
 text = "Bubble"
+uppercase = true
+metadata/_edit_use_anchors_ = true
 
 [node name="MelonEuskName" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 1196.0
-offset_top = 147.0
-offset_right = 1673.0
-offset_bottom = 257.0
+offset_left = 1358.0
+offset_top = 60.0
+offset_right = 1835.0
+offset_bottom = 170.0
+theme_override_constants/outline_size = 40
 theme_override_fonts/font = ExtResource("4_xfppm")
 theme_override_font_sizes/font_size = 75
 text = "Melon Usk"
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="RevealName" type="AnimationPlayer" parent="Control/MelonEuskName"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_m1ies")
+}
+autoplay = "revealName"
 
 [node name="VS" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 22.175
-anchor_top = 11.75
-anchor_right = 24.1
-anchor_bottom = 14.175
-offset_right = 40.0
-offset_bottom = 40.0
+anchor_left = 20.375
+anchor_top = 17.075
+anchor_right = 22.55
+anchor_bottom = 19.5
+offset_left = 149.0
+offset_top = -324.0
+offset_right = 189.0
+offset_bottom = -284.0
 theme_override_fonts/font = ExtResource("4_xfppm")
 theme_override_font_sizes/font_size = 100
 text = "VS"
@@ -223,10 +315,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_dwula")
-anim_player = NodePath("../AnimationPlayer")
-parameters/BlendTree/Blend2/blend_amount = 0.69
+anim_player = NodePath("../MelonAnimations")
+parameters/BlendTree/Blend2/blend_amount = 0.67
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="MelonAnimations" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_ghjt7")
 }

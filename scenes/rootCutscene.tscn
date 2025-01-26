@@ -1,9 +1,9 @@
 [gd_scene load_steps=25 format=3 uid="uid://c0ga8tkrjkbb8"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_esqcy"]
-[ext_resource type="Texture2D" uid="uid://ie6okm577evx" path="res://assets/chillBubble.png" id="2_gla1j"]
-[ext_resource type="Texture2D" uid="uid://cthxk372rixmj" path="res://assets/Textures/melon-usk-boss-texture Background Removed.png" id="3_g77ew"]
-[ext_resource type="FontFile" uid="uid://bnhrps1snxp3w" path="res://assets/GameFont.otf" id="4_xfppm"]
+[ext_resource type="Texture2D" uid="uid://dn7cca8072snj" path="res://assets/chillBubble.png" id="2_gla1j"]
+[ext_resource type="Texture2D" uid="uid://cy1e1lkfdjn54" path="res://assets/Textures/melon-usk-boss-texture Background Removed.png" id="3_g77ew"]
+[ext_resource type="FontFile" uid="uid://c45b1gs70xkk3" path="res://assets/GameFont.otf" id="4_xfppm"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_85mhp"]
 

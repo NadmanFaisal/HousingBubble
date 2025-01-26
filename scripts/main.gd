@@ -39,6 +39,8 @@ var wave = 0
 var wave1_milestone = 10
 var wave2_milestone = 20
 
+var victory = preload("res://victory_screen.tscn").instantiate()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	speech_stage1 = speech_scene.instantiate()
@@ -154,10 +156,16 @@ func start_boss_battle():
 	boss.stage2.connect(start_stage2_speech)
 	boss.stage3.connect(start_stage3_speech)
 	
+	boss.death.connect(_on_boss_death)
+	
 	add_child(boss)
 	add_child(speech_stage1)
 	
 
+func _on_boss_death():
+	get_tree().root.add_child(victory)
+	queue_free()
+	
 func _on_stage1_speech_end():
 	start_stage1()
 
@@ -189,11 +197,11 @@ func start_stage3():
 	stage3_started = true
 	$Stage3Timer.start()
 	
-func victory():
-	$GoonSpawnerPath/GoonTimer.stop()
-	$AdsSpawnerPath/AdsSpawnTimer.stop()
-	$Stage3Timer.stop()
-	#todo: load victory screen
+#func victory():
+	#$GoonSpawnerPath/GoonTimer.stop()
+	#$AdsSpawnerPath/AdsSpawnTimer.stop()
+	#$Stage3Timer.stop()
+	##todo: load victory screen
 
 func _on_ads_spawn_timer_timeout() -> void:
 	var ad = adScene.instantiate()

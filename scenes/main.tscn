@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://3370efu28jlw" path="res://scenes/baseEnemy.tscn" id="2_7kot1"]
 [ext_resource type="PackedScene" uid="uid://by2gwex2hkutq" path="res://scenes/bigEnemy.tscn" id="2_rvucw"]
 [ext_resource type="PackedScene" uid="uid://bwimw45kgn57k" path="res://scenes/Tower.tscn" id="3_qjbvq"]
-[ext_resource type="FontFile" uid="uid://p8swtydt311q" path="res://assets/GameFont.otf" id="4_1wrx8"]
+[ext_resource type="FontFile" uid="uid://ce5d80ohonr47" path="res://assets/GameFont.otf" id="4_1wrx8"]
 [ext_resource type="PackedScene" uid="uid://binujl2th4l6p" path="res://scenes/boss/Boss.tscn" id="4_ejlvg"]
 [ext_resource type="PackedScene" uid="uid://yx10ug2s1x0q" path="res://scenes/fastEnemy.tscn" id="4_jkfef"]
 [ext_resource type="Script" path="res://scripts/kill_count.gd" id="5_3ln6f"]

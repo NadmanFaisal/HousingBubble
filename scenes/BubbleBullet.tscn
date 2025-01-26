@@ -7,6 +7,8 @@
 radius = 7.0
 
 [node name="BubbleBullet" type="Area2D"]
+collision_layer = 8
+collision_mask = 0
 script = ExtResource("1_5c160")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -19,3 +21,5 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_a3ruf")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

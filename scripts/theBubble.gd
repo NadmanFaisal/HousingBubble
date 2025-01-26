@@ -19,7 +19,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot"):
-		var mouse_position = get_viewport().get_mouse_position()
 		shoot()
 		emit_signal("bubblePosition", global_position)
 
@@ -32,19 +31,18 @@ func take_damage(amount: int):
 		emit_signal("killed")
 
 func _on_mob_damage_bubble(amount: Variant) -> void:
-	print("potato")
+	print("Nexus hit")
 	take_damage(amount)
+	
 func shoot():
-	print("spawned")
+	print("Bullet shot")
 	var bullet = bulletScene.instantiate()
 	bullet.position = Vector2.ZERO
 	
 	var mouse_position = get_viewport().get_mouse_position()
-	print(mouse_position)
-	bullet.direction = (mouse_position-position).normalized()
+	bullet.direction = (mouse_position - position).normalized()
 	
-	
-	
+	bullet.type = "CASTLE_SHOT"
 	
 	add_child(bullet)
 	
@@ -53,5 +51,3 @@ func shoot():
 	#bullet.position = $Marker2D.global_position
 	#bullet.set_direction(direction)
 	#print(global_position) 
-
-	

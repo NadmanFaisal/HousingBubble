@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 		emit_signal("bubblePosition", global_position)
+		$AudioStreamPlayer2D.play()
 
 func take_damage(amount: int):
 	var prev_hp = hp
@@ -45,6 +46,7 @@ func shoot():
 	bullet.type = "CASTLE_SHOT"
 	
 	add_child(bullet)
+	$AudioStreamPlayer2D.play()
 	
 	#var mouse_position = get_global_mouse_position()
 	#var direction = (mouse_position - global_position).normalize()

@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcspcodu03jhc"]
+[gd_scene load_steps=10 format=3 uid="uid://dcspcodu03jhc"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_t08pe"]
-[ext_resource type="FontFile" uid="uid://bnhrps1snxp3w" path="res://assets/GameFont.otf" id="2_fj383"]
+[ext_resource type="FontFile" uid="uid://c45b1gs70xkk3" path="res://assets/GameFont.otf" id="2_fj383"]
 [ext_resource type="Script" path="res://scripts/bubble_hp.gd" id="2_tmsuk"]
 [ext_resource type="Script" path="res://scripts/money_label.gd" id="5_7nqts"]
-[ext_resource type="Texture2D" uid="uid://dx23owbi15nrn" path="res://assets/tower.png" id="5_1833l"]
+[ext_resource type="Texture2D" uid="uid://bwqfyjfh702ha" path="res://assets/tower.png" id="5_1833l"]
 [ext_resource type="Script" path="res://scripts/not_enough_money.gd" id="5_pqqth"]
+[ext_resource type="AudioStream" uid="uid://ly4ekq8prcg5" path="res://assets/soundFX/Theme/theme-song-1.wav" id="7_quh2m"]
+[ext_resource type="AudioStream" uid="uid://byd03sm8ql7b3" path="res://assets/soundFX/Theme/theme-song-2.mp3" id="8_fepgl"]
+[ext_resource type="AudioStream" uid="uid://iui73hbi8r43" path="res://assets/soundFX/soundeffects/purchase-sfx-2.mp3" id="9_dbfmq"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_t08pe")
@@ -73,6 +76,15 @@ one_shot = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 8.5
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_quh2m")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_fepgl")
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_dbfmq")
 
 [connection signal="money_update" from="." to="MoneyLabel" method="_on_hud_money_update"]
 [connection signal="pressed" from="BuildTowerButton" to="." method="_on_build_tower_button_pressed"]

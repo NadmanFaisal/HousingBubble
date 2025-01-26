@@ -1,88 +1,112 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1737898626
-README.md::TextFile::-1::1737898299::0::1::::<><>::
-root.gd::GDScript::-1::1737898311::0::1::::<>Node2D<>::
-::res://assets/::1737898329
-backgorund2.png::CompressedTexture2D::7328002195346246975::1737898299::1737898627::1::::<><>::
-background.png::CompressedTexture2D::8882630794629668215::1737898299::1737898627::1::::<><>::
-bubble.png::CompressedTexture2D::5265374106425076011::1737898299::1737898627::1::::<><>::
-chillBubble.png::CompressedTexture2D::515616656707217217::1737898311::1737898627::1::::<><>::
-GameFont.otf::FontFile::2012786491840792458::1737898299::1737898627::1::::<><>::
-icon.svg::CompressedTexture2D::4566606148155198137::1737898299::1737898627::1::::<><>::
-pixel-illustration-water-drop-260nw-2104500737 Background Removed 2.png::CompressedTexture2D::4121314245873988212::1737898299::1737898627::1::::<><>::
-pixelBubble.png::CompressedTexture2D::1715210521787989005::1737898299::1737898627::1::::<><>::
-tower.png::CompressedTexture2D::9087781775329160042::1737898299::1737898627::1::::<><>::
-::res://assets/soundFX/::1737898299
-::res://assets/soundFX/mobSFX/::1737898328
-dying-1-sfx.mp3::AudioStreamMP3::6079022295804009741::1737898299::1737898627::1::::<><>::
-dying-2-sfx.mp3::AudioStreamMP3::1722170137091444116::1737898299::1737898627::1::::<><>::
-dying-3-sfx.mp3::AudioStreamMP3::1189606740620615040::1737898299::1737898627::1::::<><>::
-dying-4-sfx.mp3::AudioStreamMP3::2082349526004984650::1737898299::1737898627::1::::<><>::
-grunt-1sfx.mp3::AudioStreamMP3::4407722876232762012::1737898299::1737898627::1::::<><>::
-melon-eusk-sfx.mp3::AudioStreamMP3::3121210963515087483::1737898299::1737898627::1::::<><>::
-mob-1-sfx.mp3::AudioStreamMP3::7899178691511207288::1737898299::1737898627::1::::<><>::
-mob-2-sfx.mp3::AudioStreamMP3::658232299388239860::1737898299::1737898627::1::::<><>::
-mob-attack-sfx.mp3::AudioStreamMP3::4869401499005284936::1737898299::1737898627::1::::<><>::
-mob-sfx-3.mp3::AudioStreamMP3::5939744272827096095::1737898299::1737898627::1::::<><>::
-taking-damage-sfx.mp3::AudioStreamMP3::7834281872812353187::1737898299::1737898627::1::::<><>::
-::res://assets/soundFX/soundeffects/::1737898328
-bubble-pop-sfx.mp3::AudioStreamMP3::3647190917218488::1737898299::1737898627::1::::<><>::
-bubble-shoot-sfx.mp3::AudioStreamMP3::9111054081919948025::1737898299::1737898627::1::::<><>::
-button-click-sfx.mp3::AudioStreamMP3::3644956339363400891::1737898299::1737898627::1::::<><>::
-congrats-sfx.mp3::AudioStreamMP3::8177018059182125709::1737898299::1737898627::1::::<><>::
-construction-sfx-2.mp3::AudioStreamMP3::6066027100342871538::1737898299::1737898627::1::::<><>::
-dostroy-tower-sfx.mp3::AudioStreamMP3::1964194245836154895::1737898299::1737898627::1::::<><>::
-game-fail-sfx.mp3::AudioStreamMP3::4226774348535643358::1737898299::1737898627::1::::<><>::
-housing-bubble-pop-sfx.mp3::AudioStreamMP3::2923575929081023749::1737898299::1737898627::1::::<><>::
-purchase-sfx-2.mp3::AudioStreamMP3::6335996698525265793::1737898299::1737898627::1::::<><>::
-purchase-sfx.mp3::AudioStreamMP3::5885010328865290610::1737898299::1737898627::1::::<><>::
-tower-construction-sfx.mp3::AudioStreamMP3::6961187105966695012::1737898299::1737898627::1::::<><>::
-victory-sfx-2.mp3::AudioStreamMP3::7890050106375138405::1737898299::1737898627::1::::<><>::
-victory-sfx.mp3::AudioStreamMP3::2805663079549983253::1737898299::1737898627::1::::<><>::
-::res://assets/soundFX/Theme/::1737898329
-boss-theme.mp3::AudioStreamMP3::934741685966379716::1737898299::1737898627::1::::<><>::
-theme-song-1.wav::AudioStreamWAV::6443144375324080470::1737898299::1737898627::1::::<><>::
-theme-song-2.mp3::AudioStreamMP3::792096706722796775::1737898299::1737898627::1::::<><>::
-theme-song-3.mp3::AudioStreamMP3::5807781940895081171::1737898299::1737898627::1::::<><>::
-::res://assets/Textures/::1737898329
-another-prototype-building-sprite Background Removed.png::CompressedTexture2D::9103572781913914020::1737898299::1737898627::1::::<><>::
-another-prototype-building-sprite copy 2 Background Removed.png::CompressedTexture2D::8123762429057185959::1737898299::1737898627::1::::<><>::
-another-prototype-building-sprite copy Background Removed.png::CompressedTexture2D::571245888206517800::1737898299::1737898627::1::::<><>::
-fast-enemy-1 Background Removed.png::CompressedTexture2D::1490951014981529232::1737898299::1737898627::1::::<><>::
-fast-enemy-2 Background Removed.png::CompressedTexture2D::372791848641461064::1737898299::1737898627::1::::<><>::
-fat-enemy-1.png::CompressedTexture2D::6456641305808906773::1737898299::1737898627::1::::<><>::
-fat-enemy-2.png::CompressedTexture2D::1509000817168265310::1737898299::1737898627::1::::<><>::
-grass-ground-texture.png::CompressedTexture2D::1575690545203172624::1737898299::1737898627::1::::<><>::
-melon-usk-boss-texture Background Removed.png::CompressedTexture2D::7692366137682876482::1737898299::1737898627::1::::<><>::
-mob-path-texture.png::CompressedTexture2D::1267162656836609177::1737898299::1737898627::1::::<><>::
-normal-enemy-1 Background Removed.png::CompressedTexture2D::2558331488212035933::1737898299::1737898627::1::::<><>::
-normal-enemy-2 Background Removed.png::CompressedTexture2D::3063465376369869859::1737898299::1737898627::1::::<><>::
-pixel-illustration-water-drop-260nw-2104500737 Background Removed.png::CompressedTexture2D::3512702680664211698::1737898299::1737898627::1::::<><>::
-prototype-building-image Background Removed.png::CompressedTexture2D::16960007616321152::1737898299::1737898627::1::::<><>::
-prototype-building-image copy.png::CompressedTexture2D::4826184312104916940::1737898299::1737898627::1::::<><>::
-::res://scenes/::1737898441
-baseEnemy.tscn::PackedScene::2025078006358249768::1737898299::0::1::::<><>::res://scripts/baseEnemy.gd<>uid://b6cdloq6itkp2::::res://assets/icon.svg
-BubbleBullet.tscn::PackedScene::755635695892378682::1737898299::0::1::::<><>::res://scripts/bubble_bullet.gd<>uid://byynpcxiltfke::::res://assets/pixel-illustration-water-drop-260nw-2104500737 Background Removed 2.png
-Bullet.tscn::PackedScene::8951419381937906096::1737898299::0::1::::<><>::res://scripts/bullet.gd<>uid://b6cdloq6itkp2::::res://assets/icon.svg
-hud.tscn::PackedScene::7337713605312293956::1737898441::0::1::::<><>::res://scripts/hud.gd<>uid://3xakgfsiuvig::::res://assets/GameFont.otf<>uid://bwimw45kgn57k::::res://scenes/Tower.tscn<>res://scripts/bubble_hp.gd
-main.tscn::PackedScene::3196698155712987403::1737898332::0::1::::<><>::uid://bgj8lwuchbeha::::res://scenes/theBubble.tscn<>uid://dcspcodu03jhc::::res://scenes/hud.tscn<>uid://3370efu28jlw::::res://scenes/baseEnemy.tscn
-rootCutscene.tscn::PackedScene::6540008670236752327::1737898615::0::1::::<><>::res://root.gd<>uid://hl1epo7upsu0::::res://assets/chillBubble.png<>uid://dhuie8i3236m5::::res://assets/Textures/melon-usk-boss-texture Background Removed.png<>uid://3xakgfsiuvig::::res://assets/GameFont.otf
-test.tscn::PackedScene::2330548996578847542::1737898299::0::1::::<><>::uid://bgj8lwuchbeha::::res://scenes/theBubble.tscn<>uid://cb7ia5kcccw18::::res://scenes/baseEnemy.tscn<>uid://dcspcodu03jhc::::res://scenes/hud.tscn
-theBubble.tscn::PackedScene::2828157636312141366::1737898299::0::1::::<><>::res://scripts/theBubble.gd<>res://scenes/BubbleBullet.tscn<>uid://chat7bijk18ax::::res://assets/bubble.png
-Tower.tscn::PackedScene::3947859727125602634::1737898299::0::1::::<><>::res://scripts/Tower.gd<>uid://d2qgo5paku8sc::::res://assets/tower.png
-::res://scenes/menu/::1737898299
-menu.tscn::PackedScene::986141125428905265::1737898299::0::1::::<><>::uid://3xakgfsiuvig::::res://assets/GameFont.otf<>res://scripts/menu/menu.gd<>res://scripts/menu/background.gd<>uid://dcn0ejdsxewgl::::res://assets/backgorund2.png<>uid://cb3mtk3k3flh::::res://scenes/menu/menu_bubble.tscn
-menu_bubble.tscn::PackedScene::144164585032803089::1737898299::0::1::::<><>::res://scripts/menu/menu_bubble.gd<>uid://yo4jckk0mvlt::::res://assets/pixelBubble.png
-::res://scripts/::1737898441
-background.gd::GDScript::-1::1737898299::0::1::::<>Sprite2D<>::
-baseEnemy.gd::GDScript::-1::1737898299::0::1::::<>Area2D<>::
-bubble_bullet.gd::GDScript::-1::1737898299::0::1::::<>Area2D<>::
-bubble_hp.gd::GDScript::-1::1737898299::0::1::::<>ProgressBar<>::
-bullet.gd::GDScript::-1::1737898299::0::1::::<>CharacterBody2D<>::
-hud.gd::GDScript::-1::1737898441::0::1::::<>CanvasLayer<>::
-theBubble.gd::GDScript::-1::1737898299::0::1::::<>Area2D<>::
-Tower.gd::GDScript::-1::1737898299::0::1::::<>CharacterBody2D<>::
-::res://scripts/menu/::1737898299
-background.gd::GDScript::-1::1737898299::0::1::::<>Node2D<>::
-menu.gd::GDScript::-1::1737898299::0::1::::<>Node<>::
-menu_bubble.gd::GDScript::-1::1737898299::0::1::::<>Node2D<>::
+::res://::1737903468
+README.md::TextFile::-1::1737903444::0::1::::<><>::
+root.gd::GDScript::-1::1737903444::0::1::::<>Node2D<>::
+::res://assets/::1737903444
+backgorund2.png::CompressedTexture2D::1781898524818260744::1737903444::1737903469::1::::<><>::
+background.png::CompressedTexture2D::3243518406694028269::1737903444::1737903469::1::::<><>::
+bubble.png::CompressedTexture2D::9096928597471792352::1737903444::1737903469::1::::<><>::
+chillBubble.png::CompressedTexture2D::8137902164235256259::1737903444::1737903468::1::::<><>::
+GameFont.otf::FontFile::6870356657580066528::1737903444::1737903468::1::::<><>::
+icon.svg::CompressedTexture2D::7949033716134144009::1737903444::1737903468::1::::<><>::
+pixel-illustration-water-drop-260nw-2104500737 Background Removed 2.png::CompressedTexture2D::3621796426633852981::1737903444::1737903468::1::::<><>::
+pixelBubble.png::CompressedTexture2D::8828111445530501279::1737903444::1737903469::1::::<><>::
+tower.png::CompressedTexture2D::3963952212608317890::1737903444::1737903469::1::::<><>::
+::res://assets/soundFX/::1737903444
+::res://assets/soundFX/mobSFX/::1737903444
+dying-1-sfx.mp3::AudioStreamMP3::3480936002698914871::1737903444::1737903468::1::::<><>::
+dying-2-sfx.mp3::AudioStreamMP3::8567373649334544595::1737903444::1737903468::1::::<><>::
+dying-3-sfx.mp3::AudioStreamMP3::6978283686505357968::1737903444::1737903468::1::::<><>::
+dying-4-sfx.mp3::AudioStreamMP3::3471397427038362220::1737903444::1737903468::1::::<><>::
+grunt-1sfx.mp3::AudioStreamMP3::4239639525426034769::1737903444::1737903468::1::::<><>::
+melon-eusk-sfx.mp3::AudioStreamMP3::7219234295667304314::1737903444::1737903468::1::::<><>::
+mob-1-sfx.mp3::AudioStreamMP3::8069029807059866742::1737903444::1737903468::1::::<><>::
+mob-2-sfx.mp3::AudioStreamMP3::3945460030365507380::1737903444::1737903468::1::::<><>::
+mob-attack-sfx.mp3::AudioStreamMP3::8720477711630665708::1737903444::1737903468::1::::<><>::
+mob-sfx-3.mp3::AudioStreamMP3::3105564017567815115::1737903444::1737903468::1::::<><>::
+taking-damage-sfx.mp3::AudioStreamMP3::7979703361371875130::1737903444::1737903468::1::::<><>::
+::res://assets/soundFX/soundeffects/::1737903444
+bubble-pop-sfx.mp3::AudioStreamMP3::6385722487716544051::1737903444::1737903468::1::::<><>::
+bubble-shoot-sfx.mp3::AudioStreamMP3::6369315744417654707::1737903444::1737903468::1::::<><>::
+button-click-sfx.mp3::AudioStreamMP3::8209989887131457831::1737903444::1737903468::1::::<><>::
+congrats-sfx.mp3::AudioStreamMP3::4246416015786212461::1737903444::1737903468::1::::<><>::
+construction-sfx-2.mp3::AudioStreamMP3::1801244481703513317::1737903444::1737903468::1::::<><>::
+dostroy-tower-sfx.mp3::AudioStreamMP3::1424468954802874374::1737903444::1737903468::1::::<><>::
+game-fail-sfx.mp3::AudioStreamMP3::3030086987161220058::1737903444::1737903468::1::::<><>::
+housing-bubble-pop-sfx.mp3::AudioStreamMP3::1635021933130962861::1737903444::1737903468::1::::<><>::
+purchase-sfx-2.mp3::AudioStreamMP3::603342667057421730::1737903444::1737903468::1::::<><>::
+purchase-sfx.mp3::AudioStreamMP3::2190359619913267232::1737903444::1737903468::1::::<><>::
+tower-construction-sfx.mp3::AudioStreamMP3::4099852910774653791::1737903444::1737903468::1::::<><>::
+victory-sfx-2.mp3::AudioStreamMP3::6009654034291710929::1737903444::1737903468::1::::<><>::
+victory-sfx.mp3::AudioStreamMP3::5577127395378856918::1737903444::1737903468::1::::<><>::
+::res://assets/soundFX/Theme/::1737903444
+boss-theme.mp3::AudioStreamMP3::6964046391412268686::1737903444::1737903468::1::::<><>::
+chill-guy.mp3::AudioStreamMP3::7859421006319487032::1737903444::1737903468::1::::<><>::
+theme-song-1.wav::AudioStreamWAV::823390833552094730::1737903444::1737903469::1::::<><>::
+theme-song-2.mp3::AudioStreamMP3::4078714956795731638::1737903444::1737903468::1::::<><>::
+theme-song-3.mp3::AudioStreamMP3::8734020677767116808::1737903444::1737903468::1::::<><>::
+::res://assets/Textures/::1737903444
+another-prototype-building-sprite Background Removed.png::CompressedTexture2D::7631386806859609780::1737903444::1737903469::1::::<><>::
+another-prototype-building-sprite copy 2 Background Removed.png::CompressedTexture2D::8590207989092342000::1737903444::1737903469::1::::<><>::
+another-prototype-building-sprite copy Background Removed.png::CompressedTexture2D::3189816322693388076::1737903444::1737903469::1::::<><>::
+chill-guy-texture.png::CompressedTexture2D::3212322776501221803::1737903444::1737903469::1::::<><>::
+fast-enemy-1 Background Removed.png::CompressedTexture2D::3560854098938036041::1737903444::1737903469::1::::<><>::
+fast-enemy-2 Background Removed.png::CompressedTexture2D::3751342680911963331::1737903444::1737903469::1::::<><>::
+fat-enemy-1.png::CompressedTexture2D::8535255520245698348::1737903444::1737903469::1::::<><>::
+fat-enemy-2.png::CompressedTexture2D::6360768266378569013::1737903444::1737903469::1::::<><>::
+grass-ground-texture.png::CompressedTexture2D::2496275585604085615::1737903444::1737903469::1::::<><>::
+high-res-chill-guy Background Removed.png::CompressedTexture2D::6707402784242596493::1737903444::1737903469::1::::<><>::
+melon-usk-boss-texture Background Removed.png::CompressedTexture2D::6511337328353578341::1737903444::1737903469::1::::<><>::
+mob-path-texture.png::CompressedTexture2D::1860993792508493447::1737903444::1737903469::1::::<><>::
+normal-enemy-1 Background Removed.png::CompressedTexture2D::7619243768532149562::1737903444::1737903468::1::::<><>::
+normal-enemy-2 Background Removed.png::CompressedTexture2D::2856216419405325764::1737903444::1737903468::1::::<><>::
+pixel-illustration-water-drop-260nw-2104500737 Background Removed.png::CompressedTexture2D::5830334686200974240::1737903444::1737903468::1::::<><>::
+prototype-building-image Background Removed.png::CompressedTexture2D::7793111689898807200::1737903444::1737903468::1::::<><>::
+prototype-building-image copy.png::CompressedTexture2D::1492670604481735886::1737903444::1737903469::1::::<><>::
+::res://scenes/::1737903444
+baseEnemy.tscn::PackedScene::2025078006358249768::1737903444::0::1::::<><>::res://scripts/baseEnemy.gd<>uid://b6cdloq6itkp2::::res://assets/icon.svg
+BubbleBullet.tscn::PackedScene::755635695892378682::1737903444::0::1::::<><>::res://scripts/bubble_bullet.gd<>uid://byynpcxiltfke::::res://assets/pixel-illustration-water-drop-260nw-2104500737 Background Removed 2.png
+Bullet.tscn::PackedScene::8951419381937906096::1737903444::0::1::::<><>::res://scripts/bullet.gd<>uid://b6cdloq6itkp2::::res://assets/icon.svg
+chill-cutscene.tscn::PackedScene::3158799317861389765::1737903444::0::1::::<><>::res://scenes/chill_cutscene.gd<>uid://dcn0ejdsxewgl::::res://assets/backgorund2.png<>uid://3xakgfsiuvig::::res://assets/GameFont.otf<>uid://bbrl8370t26kc::::res://assets/Textures/high-res-chill-guy Background Removed.png<>uid://cky1rlnwktsmq::::res://assets/soundFX/Theme/chill-guy.mp3
+chill_cutscene.gd::GDScript::-1::1737903444::0::1::::<>Node<>::
+hud.tscn::PackedScene::7337713605312293956::1737903444::0::1::::<><>::res://scripts/hud.gd<>uid://bnhrps1snxp3w::::res://assets/GameFont.otf<>res://scripts/bubble_hp.gd<>res://scripts/money_label.gd<>uid://dx23owbi15nrn::::res://assets/tower.png<>res://scripts/not_enough_money.gd
+main.tscn::PackedScene::3196698155712987403::1737903444::0::1::::<><>::res://scripts/main.gd<>uid://bgj8lwuchbeha::::res://scenes/theBubble.tscn<>uid://dcspcodu03jhc::::res://scenes/hud.tscn<>uid://3370efu28jlw::::res://scenes/baseEnemy.tscn<>uid://bwimw45kgn57k::::res://scenes/Tower.tscn<>uid://bnhrps1snxp3w::::res://assets/GameFont.otf<>uid://binujl2th4l6p::::res://scenes/boss/Boss.tscn<>res://scripts/kill_count.gd<>uid://4wd0tx662286::::res://scenes/boss/speech_bubble.tscn<>uid://cw1lfgxx0n6mn::::res://scenes/notification.tscn<>uid://ibw8xwblhk8::::res://scenes/boss/car.tscn
+notification.tscn::PackedScene::6371346916667997113::1737903444::0::1::::<><>::res://scripts/notification.gd<>uid://b6cdloq6itkp2::::res://assets/icon.svg
+reward.tscn::PackedScene::2233932388950179076::1737903444::0::1::::<><>::uid://3xakgfsiuvig::::res://assets/GameFont.otf<>res://scripts/reward.gd
+rootCutscene.tscn::PackedScene::6540008670236752327::1737903444::0::1::::<><>::res://root.gd<>uid://ie6okm577evx::::res://assets/chillBubble.png<>uid://cthxk372rixmj::::res://assets/Textures/melon-usk-boss-texture Background Removed.png<>uid://bnhrps1snxp3w::::res://assets/GameFont.otf
+test.tscn::PackedScene::2330548996578847542::1737903444::0::1::::<><>::uid://bgj8lwuchbeha::::res://scenes/theBubble.tscn<>uid://cb7ia5kcccw18::::res://scenes/baseEnemy.tscn<>uid://dcspcodu03jhc::::res://scenes/hud.tscn
+theBubble.tscn::PackedScene::2828157636312141366::1737903444::0::1::::<><>::res://scripts/theBubble.gd<>uid://k1bhegv47peg::::res://scenes/BubbleBullet.tscn<>uid://chat7bijk18ax::::res://assets/bubble.png
+Tower.tscn::PackedScene::3947859727125602634::1737903444::0::1::::<><>::res://scripts/Tower.gd<>uid://d2qgo5paku8sc::::res://assets/tower.png<>uid://k1bhegv47peg::::res://scenes/BubbleBullet.tscn
+::res://scenes/boss/::1737903444
+Boss.tscn::PackedScene::2975999375940962385::1737903444::0::1::::<><>::res://scripts/boss.gd<>uid://ffevgkvudws6::::res://assets/Textures/melon-usk-boss-texture Background Removed.png<>res://scripts/laser_hitbox.gd
+car.tscn::PackedScene::16616796293565177::1737903444::0::1::::<><>::res://scripts/car.gd<>uid://b6cdloq6itkp2::::res://assets/icon.svg
+speech_bubble.tscn::PackedScene::2081120606843348437::1737903444::0::1::::<><>::uid://ffevgkvudws6::::res://assets/Textures/melon-usk-boss-texture Background Removed.png<>res://scripts/speech_bubble.gd<>uid://3xakgfsiuvig::::res://assets/GameFont.otf<>res://scripts/portrait.gd<>res://scripts/speech.gd
+::res://scenes/menu/::1737903444
+menu.tscn::PackedScene::986141125428905265::1737903444::0::1::::<><>::uid://3xakgfsiuvig::::res://assets/GameFont.otf<>res://scripts/menu/menu.gd<>res://scripts/menu/background.gd<>uid://dcn0ejdsxewgl::::res://assets/backgorund2.png<>uid://cb3mtk3k3flh::::res://scenes/menu/menu_bubble.tscn
+menu_bubble.tscn::PackedScene::144164585032803089::1737903444::0::1::::<><>::res://scripts/menu/menu_bubble.gd<>uid://yo4jckk0mvlt::::res://assets/pixelBubble.png
+::res://scripts/::1737903444
+ads_spawner_path.gd::GDScript::-1::1737903444::0::1::::<>Path2D<>::
+background.gd::GDScript::-1::1737903444::0::1::::<>Sprite2D<>::
+baseEnemy.gd::GDScript::-1::1737903444::0::1::::<>Area2D<>::
+boss.gd::GDScript::-1::1737903444::0::1::::<>Area2D<>::
+bubble_bullet.gd::GDScript::-1::1737903444::0::1::::<>Area2D<>::
+bubble_hp.gd::GDScript::-1::1737903444::0::1::::<>ProgressBar<>::
+bullet.gd::GDScript::-1::1737903444::0::1::::<>RigidBody2D<>::
+car.gd::GDScript::-1::1737903444::0::1::::<>Area2D<>::
+hud.gd::GDScript::-1::1737903444::0::1::::<>CanvasLayer<>::
+kill_count.gd::GDScript::-1::1737903444::0::1::::<>Label<>::
+laser_hitbox.gd::GDScript::-1::1737903444::0::1::::<>Area2D<>::
+main.gd::GDScript::-1::1737903444::0::1::::<>Node<>::
+money_label.gd::GDScript::-1::1737903444::0::1::::<>Label<>::
+notification.gd::GDScript::-1::1737903444::0::1::::<>Node2D<>::
+not_enough_money.gd::GDScript::-1::1737903444::0::1::::<>Label<>::
+portrait.gd::GDScript::-1::1737903444::0::1::::<>TextureRect<>::
+reward.gd::GDScript::-1::1737903444::0::1::::<>Label<>::
+speech.gd::GDScript::-1::1737903444::0::1::::<>Label<>::
+speech_bubble.gd::GDScript::-1::1737903444::0::1::::<>CanvasLayer<>::
+theBubble.gd::GDScript::-1::1737903444::0::1::::<>Area2D<>::
+Tower.gd::GDScript::-1::1737903444::0::1::::<>CharacterBody2D<>::
+::res://scripts/menu/::1737903444
+background.gd::GDScript::-1::1737903444::0::1::::<>Node2D<>::
+menu.gd::GDScript::-1::1737903444::0::1::::<>Node<>::
+menu_bubble.gd::GDScript::-1::1737903444::0::1::::<>Node2D<>::

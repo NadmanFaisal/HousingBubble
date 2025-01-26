@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dcspcodu03jhc" path="res://scenes/hud.tscn" id="1_v40sh"]
 [ext_resource type="PackedScene" uid="uid://3370efu28jlw" path="res://scenes/baseEnemy.tscn" id="2_7kot1"]
 [ext_resource type="PackedScene" uid="uid://bwimw45kgn57k" path="res://scenes/Tower.tscn" id="3_qjbvq"]
-[ext_resource type="FontFile" uid="uid://bnhrps1snxp3w" path="res://assets/GameFont.otf" id="4_1wrx8"]
+[ext_resource type="FontFile" uid="uid://c45b1gs70xkk3" path="res://assets/GameFont.otf" id="4_1wrx8"]
 [ext_resource type="PackedScene" uid="uid://binujl2th4l6p" path="res://scenes/boss/Boss.tscn" id="4_ejlvg"]
 [ext_resource type="Script" path="res://scripts/kill_count.gd" id="5_3ln6f"]
 [ext_resource type="PackedScene" uid="uid://4wd0tx662286" path="res://scenes/boss/speech_bubble.tscn" id="5_lito4"]

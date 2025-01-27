@@ -1,15 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://cw1lfgxx0n6mn"]
 
 [ext_resource type="Script" path="res://scripts/notification.gd" id="1_ev51l"]
-[ext_resource type="Texture2D" uid="uid://b6cdloq6itkp2" path="res://assets/icon.svg" id="2_vx5o2"]
+[ext_resource type="Texture2D" uid="uid://c6546sqio1g00" path="res://scenes/x-pop-up-b.png" id="2_b3ng1"]
 
 [node name="Notification" type="Node2D"]
 script = ExtResource("1_ev51l")
 
 [node name="Ad" type="TextureRect" parent="."]
-offset_right = 128.0
-offset_bottom = 128.0
-texture = ExtResource("2_vx5o2")
+offset_right = 2538.0
+offset_bottom = 2360.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_b3ng1")
 
 [node name="Close" type="Button" parent="."]
 offset_left = 110.0

@@ -8,6 +8,7 @@ func _ready() -> void:
 	start_chill_guy_function()
 
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -24,3 +25,5 @@ func _on_start_pressed() -> void:
 func _on_chill_guy_timer_timeout() -> void:
 	remove_child(chill_guy_animation)
 	$ChillGuyTimer.stop()
+	$AudioStreamPlayer2D.play()
+	

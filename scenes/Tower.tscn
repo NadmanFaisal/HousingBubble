@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwimw45kgn57k"]
+[gd_scene load_steps=7 format=3 uid="uid://bwimw45kgn57k"]
 
 [ext_resource type="Script" path="res://scripts/Tower.gd" id="1_1sc3o"]
-[ext_resource type="Texture2D" uid="uid://d2qgo5paku8sc" path="res://assets/tower.png" id="2_36bb5"]
+[ext_resource type="Texture2D" uid="uid://bwqfyjfh702ha" path="res://assets/tower.png" id="2_36bb5"]
 [ext_resource type="PackedScene" uid="uid://k1bhegv47peg" path="res://scenes/BubbleBullet.tscn" id="2_pujki"]
+[ext_resource type="AudioStream" uid="uid://cw8j6fmpu1udn" path="res://assets/soundFX/soundeffects/bubble-pop-sfx.mp3" id="4_5ntcp"]
+[ext_resource type="AudioStream" uid="uid://0wsh64pxutkv" path="res://assets/soundFX/soundeffects/construction-sfx-2.mp3" id="5_espsv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_howfc"]
 size = Vector2(129, 129)
@@ -27,5 +29,11 @@ texture = ExtResource("2_36bb5")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_5ntcp")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_espsv")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

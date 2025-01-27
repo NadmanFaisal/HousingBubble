@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://obxun5to0osn"]
+[gd_scene load_steps=8 format=3 uid="uid://obxun5to0osn"]
 
-[ext_resource type="FontFile" uid="uid://3xakgfsiuvig" path="res://assets/GameFont.otf" id="1_2e56d"]
+[ext_resource type="FontFile" uid="uid://ce5d80ohonr47" path="res://assets/GameFont.otf" id="1_2e56d"]
 [ext_resource type="Script" path="res://scripts/menu/menu.gd" id="1_g4omf"]
 [ext_resource type="Script" path="res://scripts/menu/background.gd" id="2_m5od0"]
-[ext_resource type="Texture2D" uid="uid://dcn0ejdsxewgl" path="res://assets/backgorund2.png" id="3_kpqs4"]
+[ext_resource type="Texture2D" uid="uid://bfow0x6sq3drv" path="res://assets/backgorund2.png" id="3_kpqs4"]
 [ext_resource type="PackedScene" uid="uid://cb3mtk3k3flh" path="res://scenes/menu/menu_bubble.tscn" id="3_um6h8"]
+[ext_resource type="AudioStream" uid="uid://cf5f705t60q60" path="res://assets/soundFX/Theme/theme-song-2.mp3" id="6_3jxbb"]
 
 [sub_resource type="Curve2D" id="Curve2D_x1chs"]
 _data = {
@@ -70,6 +71,9 @@ wait_time = 0.3
 
 [node name="ChillGuyTimer" type="Timer" parent="."]
 wait_time = 8.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_3jxbb")
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="timeout" from="Background/BubbleTimer" to="Background" method="_on_bubble_timer_timeout"]

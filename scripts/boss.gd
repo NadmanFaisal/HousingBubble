@@ -6,7 +6,7 @@ signal stage2
 signal stage3
 
 
-@export var max_health = 4000
+@export var max_health = 6000
 const STAGE2_MILESTONE = 0.75	# hp% trigger for stage 2
 const STAGE3_MILESTONE = 0.2		# hp% trigger for stage 3
 

@@ -1,12 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://blsrffh0lxy8b"]
+[gd_scene load_steps=16 format=3 uid="uid://blsrffh0lxy8b"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_linne"]
 [ext_resource type="PackedScene" uid="uid://bgj8lwuchbeha" path="res://scenes/theBubble.tscn" id="1_r4mg2"]
 [ext_resource type="PackedScene" uid="uid://dcspcodu03jhc" path="res://scenes/hud.tscn" id="1_v40sh"]
 [ext_resource type="PackedScene" uid="uid://3370efu28jlw" path="res://scenes/baseEnemy.tscn" id="2_7kot1"]
+[ext_resource type="PackedScene" uid="uid://by2gwex2hkutq" path="res://scenes/bigEnemy.tscn" id="2_rvucw"]
 [ext_resource type="PackedScene" uid="uid://bwimw45kgn57k" path="res://scenes/Tower.tscn" id="3_qjbvq"]
-[ext_resource type="FontFile" uid="uid://bnhrps1snxp3w" path="res://assets/GameFont.otf" id="4_1wrx8"]
+[ext_resource type="FontFile" uid="uid://ce5d80ohonr47" path="res://assets/GameFont.otf" id="4_1wrx8"]
 [ext_resource type="PackedScene" uid="uid://binujl2th4l6p" path="res://scenes/boss/Boss.tscn" id="4_ejlvg"]
+[ext_resource type="PackedScene" uid="uid://yx10ug2s1x0q" path="res://scenes/fastEnemy.tscn" id="4_jkfef"]
 [ext_resource type="Script" path="res://scripts/kill_count.gd" id="5_3ln6f"]
 [ext_resource type="PackedScene" uid="uid://4wd0tx662286" path="res://scenes/boss/speech_bubble.tscn" id="5_lito4"]
 [ext_resource type="PackedScene" uid="uid://cw1lfgxx0n6mn" path="res://scenes/notification.tscn" id="7_gm5o5"]
@@ -26,7 +28,9 @@ point_count = 8
 
 [node name="Main" type="Node"]
 script = ExtResource("1_linne")
-goonScene = ExtResource("2_7kot1")
+bigGoon = ExtResource("2_rvucw")
+normalGoon = ExtResource("2_7kot1")
+fastGoon = ExtResource("4_jkfef")
 tower_scene = ExtResource("3_qjbvq")
 boss_scene = ExtResource("4_ejlvg")
 speech_scene = ExtResource("5_lito4")
@@ -56,9 +60,6 @@ rotation = 0.00050025
 
 [node name="GoonTimer" type="Timer" parent="GoonSpawnerPath"]
 
-[node name="Car" parent="." instance=ExtResource("8_k48kc")]
-position = Vector2(284, 305)
-
 [node name="AdsSpawnerPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_hpv1p")
 
@@ -85,7 +86,9 @@ wait_time = 7.0
 [connection signal="kill_counter_update" from="." to="HUD/KillCount" method="_on_main_kill_counter_update"]
 [connection signal="money_update" from="." to="HUD" method="_on_main_money_update"]
 [connection signal="not_enough_money" from="." to="HUD" method="_on_main_not_enough_money"]
+[connection signal="start_cutscene" from="." to="HUD" method="start_cutscene"]
 [connection signal="build_tower" from="HUD" to="." method="_on_build_tower"]
+[connection signal="finish_cutscene" from="HUD" to="." method="finish_cutscene"]
 [connection signal="damaged" from="TheBubble" to="HUD" method="_on_the_bubble_damaged"]
 [connection signal="killed" from="TheBubble" to="HUD" method="_on_the_bubble_killed"]
 [connection signal="timeout" from="GoonSpawnerPath/GoonTimer" to="." method="_on_goon_timer_timeout"]

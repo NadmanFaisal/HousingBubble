@@ -1,7 +1,8 @@
 extends Area2D
+
 signal dropped_currency
 signal damage_bubble(damage: int)
-signal death
+signal death(currency)
 
 @export var speed = 100
 @export var health = 100
@@ -21,6 +22,7 @@ var target_position
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AttackSpeed.wait_time = attack_speed
+	$Sprite2D.play("normal")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -61,11 +63,12 @@ func _on_area_exited(area: Area2D) -> void:
 	insideBubble = false
 
 func die():
-	death.emit()
+	death.emit(currency)
 	emit_signal("dropped_currency", currency)
 	
 	var reward = rewardScene.instantiate()
 	reward.position = position
+	reward.value = 1
 	get_parent().add_child(reward)
 	
 	queue_free();

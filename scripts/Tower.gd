@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$AudioStreamPlayer2D2.play()
 	pass # Replace with function body.
 
 
@@ -26,6 +27,7 @@ func shoot():
 		bullet.type = "TOWER_SHOT"
 		
 		get_parent().add_child(bullet)
+		$AudioStreamPlayer2D.play()
 	else:
 		print("All enemies killed")
 
